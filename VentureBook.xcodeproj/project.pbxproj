@@ -16,6 +16,8 @@
 		A765C703272CC3F7007D8C27 /* VentureBookUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A765C702272CC3F7007D8C27 /* VentureBookUITests.swift */; };
 		A765C712272CD440007D8C27 /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A765C710272CD440007D8C27 /* CoreData.xcdatamodeld */; };
 		A765C719272CE950007D8C27 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = A765C718272CE950007D8C27 /* Note.swift */; };
+		A77033F7272DA1D4007ACD17 /* NoteCDBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77033F6272DA1D4007ACD17 /* NoteCDBHelper.swift */; };
+		A77033F9272DA2E2007ACD17 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77033F8272DA2E2007ACD17 /* Persistence.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		A765C704272CC3F7007D8C27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A765C711272CD440007D8C27 /* CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData.xcdatamodel; sourceTree = "<group>"; };
 		A765C718272CE950007D8C27 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		A77033F6272DA1D4007ACD17 /* NoteCDBHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCDBHelper.swift; sourceTree = "<group>"; };
+		A77033F8272DA2E2007ACD17 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,7 @@
 		A73D4D9E272CEF3000452ABA /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				A77033F6272DA1D4007ACD17 /* NoteCDBHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -115,6 +120,7 @@
 				A765C6E9272CC3F7007D8C27 /* Assets.xcassets */,
 				A765C6EE272CC3F7007D8C27 /* Info.plist */,
 				A765C6EB272CC3F7007D8C27 /* Preview Content */,
+				A77033F8272DA2E2007ACD17 /* Persistence.swift */,
 			);
 			path = VentureBook;
 			sourceTree = "<group>";
@@ -287,8 +293,10 @@
 				A765C6E8272CC3F6007D8C27 /* ContentView.swift in Sources */,
 				A765C6E6272CC3F6007D8C27 /* VentureBookApp.swift in Sources */,
 				A765C712272CD440007D8C27 /* CoreData.xcdatamodeld in Sources */,
+				A77033F9272DA2E2007ACD17 /* Persistence.swift in Sources */,
 				A765C719272CE950007D8C27 /* Note.swift in Sources */,
 				A73D4DA2272CF01A00452ABA /* NoteMO.swift in Sources */,
+				A77033F7272DA1D4007ACD17 /* NoteCDBHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
