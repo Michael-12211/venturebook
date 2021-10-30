@@ -14,6 +14,7 @@
 		A765C6F8272CC3F7007D8C27 /* VentureBookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A765C6F7272CC3F7007D8C27 /* VentureBookTests.swift */; };
 		A765C703272CC3F7007D8C27 /* VentureBookUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A765C702272CC3F7007D8C27 /* VentureBookUITests.swift */; };
 		A765C712272CD440007D8C27 /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A765C710272CD440007D8C27 /* CoreData.xcdatamodeld */; };
+		A765C715272CE64C007D8C27 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = A765C714272CE64C007D8C27 /* Post.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		A765C702272CC3F7007D8C27 /* VentureBookUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VentureBookUITests.swift; sourceTree = "<group>"; };
 		A765C704272CC3F7007D8C27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A765C711272CD440007D8C27 /* CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData.xcdatamodel; sourceTree = "<group>"; };
+		A765C714272CE64C007D8C27 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				A765C710272CD440007D8C27 /* CoreData.xcdatamodeld */,
+				A765C714272CE64C007D8C27 /* Post.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 				A765C6E8272CC3F6007D8C27 /* ContentView.swift in Sources */,
 				A765C6E6272CC3F6007D8C27 /* VentureBookApp.swift in Sources */,
 				A765C712272CD440007D8C27 /* CoreData.xcdatamodeld in Sources */,
+				A765C715272CE64C007D8C27 /* Post.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
