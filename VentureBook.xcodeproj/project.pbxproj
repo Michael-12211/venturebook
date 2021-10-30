@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A73D4DA2272CF01A00452ABA /* NoteMO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73D4DA1272CF01900452ABA /* NoteMO.swift */; };
 		A765C6E6272CC3F6007D8C27 /* VentureBookApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A765C6E5272CC3F6007D8C27 /* VentureBookApp.swift */; };
 		A765C6E8272CC3F6007D8C27 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A765C6E7272CC3F6007D8C27 /* ContentView.swift */; };
 		A765C6EA272CC3F7007D8C27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A765C6E9272CC3F7007D8C27 /* Assets.xcassets */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A73D4DA1272CF01900452ABA /* NoteMO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteMO.swift; sourceTree = "<group>"; };
 		A765C6E2272CC3F6007D8C27 /* VentureBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VentureBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A765C6E5272CC3F6007D8C27 /* VentureBookApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VentureBookApp.swift; sourceTree = "<group>"; };
 		A765C6E7272CC3F6007D8C27 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -76,6 +78,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A73D4D9E272CEF3000452ABA /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		A765C6D9272CC3F6007D8C27 = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +108,7 @@
 		A765C6E4272CC3F6007D8C27 /* VentureBook */ = {
 			isa = PBXGroup;
 			children = (
+				A73D4D9E272CEF3000452ABA /* Helpers */,
 				A765C713272CD47C007D8C27 /* Models */,
 				A765C6E5272CC3F6007D8C27 /* VentureBookApp.swift */,
 				A765C6E7272CC3F6007D8C27 /* ContentView.swift */,
@@ -140,6 +150,7 @@
 			children = (
 				A765C710272CD440007D8C27 /* CoreData.xcdatamodeld */,
 				A765C718272CE950007D8C27 /* Note.swift */,
+				A73D4DA1272CF01900452ABA /* NoteMO.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -277,6 +288,7 @@
 				A765C6E6272CC3F6007D8C27 /* VentureBookApp.swift in Sources */,
 				A765C712272CD440007D8C27 /* CoreData.xcdatamodeld in Sources */,
 				A765C719272CE950007D8C27 /* Note.swift in Sources */,
+				A73D4DA2272CF01A00452ABA /* NoteMO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
