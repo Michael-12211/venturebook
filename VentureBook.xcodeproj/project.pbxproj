@@ -16,6 +16,9 @@
 		A765C703272CC3F7007D8C27 /* VentureBookUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A765C702272CC3F7007D8C27 /* VentureBookUITests.swift */; };
 		A765C712272CD440007D8C27 /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A765C710272CD440007D8C27 /* CoreData.xcdatamodeld */; };
 		A765C719272CE950007D8C27 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = A765C718272CE950007D8C27 /* Note.swift */; };
+		A766E26E272EFD8300FEC6BC /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = A766E26D272EFD8300FEC6BC /* Trip.swift */; };
+		A766E270272EFE6500FEC6BC /* TripMO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A766E26F272EFE6500FEC6BC /* TripMO.swift */; };
+		A766E272272EFF0C00FEC6BC /* TripCDBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A766E271272EFF0C00FEC6BC /* TripCDBHelper.swift */; };
 		A77033F7272DA1D4007ACD17 /* NoteCDBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77033F6272DA1D4007ACD17 /* NoteCDBHelper.swift */; };
 		A77033F9272DA2E2007ACD17 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77033F8272DA2E2007ACD17 /* Persistence.swift */; };
 /* End PBXBuildFile section */
@@ -53,6 +56,9 @@
 		A765C704272CC3F7007D8C27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A765C711272CD440007D8C27 /* CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData.xcdatamodel; sourceTree = "<group>"; };
 		A765C718272CE950007D8C27 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		A766E26D272EFD8300FEC6BC /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
+		A766E26F272EFE6500FEC6BC /* TripMO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripMO.swift; sourceTree = "<group>"; };
+		A766E271272EFF0C00FEC6BC /* TripCDBHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripCDBHelper.swift; sourceTree = "<group>"; };
 		A77033F6272DA1D4007ACD17 /* NoteCDBHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCDBHelper.swift; sourceTree = "<group>"; };
 		A77033F8272DA2E2007ACD17 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -86,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				A77033F6272DA1D4007ACD17 /* NoteCDBHelper.swift */,
+				A766E271272EFF0C00FEC6BC /* TripCDBHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -157,6 +164,8 @@
 				A765C710272CD440007D8C27 /* CoreData.xcdatamodeld */,
 				A765C718272CE950007D8C27 /* Note.swift */,
 				A73D4DA1272CF01900452ABA /* NoteMO.swift */,
+				A766E26D272EFD8300FEC6BC /* Trip.swift */,
+				A766E26F272EFE6500FEC6BC /* TripMO.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -292,8 +301,11 @@
 			files = (
 				A765C6E8272CC3F6007D8C27 /* ContentView.swift in Sources */,
 				A765C6E6272CC3F6007D8C27 /* VentureBookApp.swift in Sources */,
+				A766E272272EFF0C00FEC6BC /* TripCDBHelper.swift in Sources */,
+				A766E270272EFE6500FEC6BC /* TripMO.swift in Sources */,
 				A765C712272CD440007D8C27 /* CoreData.xcdatamodeld in Sources */,
 				A77033F9272DA2E2007ACD17 /* Persistence.swift in Sources */,
+				A766E26E272EFD8300FEC6BC /* Trip.swift in Sources */,
 				A765C719272CE950007D8C27 /* Note.swift in Sources */,
 				A73D4DA2272CF01A00452ABA /* NoteMO.swift in Sources */,
 				A77033F7272DA1D4007ACD17 /* NoteCDBHelper.swift in Sources */,

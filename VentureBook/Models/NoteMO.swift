@@ -8,7 +8,7 @@
 import Foundation
 import CoreData
 
-@objc(OrderMO)
+@objc(NoteMO)
 final class NoteMO: NSManagedObject{
     @NSManaged var id: UUID?
     @NSManaged var title: String
