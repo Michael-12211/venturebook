@@ -13,8 +13,8 @@ struct AddNote: View {
     @EnvironmentObject var tripCDBHelper : TripCDBHelper
     @Environment(\.presentationMode) var presentationMode
     
-    @State private var title = "1"
-    @State private var description = "1"
+    @State private var title = ""
+    @State private var description = ""
     @State private var trip = "none"
     @State private var picture: Data? = nil
     
@@ -22,6 +22,11 @@ struct AddNote: View {
     
     var body: some View {
         VStack {
+            HStack
+            {
+                Text("Title: ")
+                TextField("title", text: self.$title)
+            }
             HStack
             {
                 Text("Trip:")
@@ -35,6 +40,19 @@ struct AddNote: View {
             .frame(height: 250.0)
                 .pickerStyle(WheelPickerStyle())                    }
             .navigationBarTitle("Place Reservation", displayMode: .inline)
+            
+            Text("Description:")
+            ZStack //allows enterring a multi-line description
+            {
+                TextEditor(text: $description)
+                Text(description).opacity(0).padding(.all, 8)
+            }
+            
+            Button(action:{
+                addNote()
+            }){
+                Text("Add note")
+            }
         }
         .onAppear(){
             self.tripCDBHelper.getAllTrips()
@@ -51,6 +69,13 @@ struct AddNote: View {
                 trips.append("none")
             }
         }
+    }
+    
+    private func addNote()
+    {
+        //TODO
+        //once the picture can be added, save to coreDB
+        self.presentationMode.wrappedValue.dismiss()
     }
 }
 
