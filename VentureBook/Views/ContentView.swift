@@ -9,8 +9,15 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        NavigationView{
+            VStack{
+                Button (action:{
+                    print ("Navigating to the add Trip screen")
+                }) {
+                    NavigationLink("Make a note", destination: AddNote())
+                }
+            }
+        }
     }
 }
 
