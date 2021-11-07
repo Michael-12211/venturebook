@@ -16,6 +16,7 @@ struct ContentView: View {
                 }) {
                     NavigationLink("Make a note", destination: AddNote())
                 }
+                .navigationBarTitle("Home")
             }
         }
     }
