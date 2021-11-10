@@ -11,6 +11,7 @@ struct AddNote: View {
     
     @EnvironmentObject var noteCDBHelper : NoteCDBHelper
     @EnvironmentObject var tripCDBHelper : TripCDBHelper
+    @EnvironmentObject var fireDBHelper : FireDBHelper
     @Environment(\.presentationMode) var presentationMode
     
     @State private var title = ""
@@ -76,6 +77,10 @@ struct AddNote: View {
         //TODO
         //once the picture can be added, save to coreDB
         self.presentationMode.wrappedValue.dismiss()
+        
+        // Firebase integration testing
+        let newNote = Note(title:title, desc:description)
+        fireDBHelper.insertNote(newNote: newNote)
     }
 }
 

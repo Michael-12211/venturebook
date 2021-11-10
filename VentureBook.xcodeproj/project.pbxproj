@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		091CF772273C61740061DB02 /* FireDBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091CF771273C61740061DB02 /* FireDBHelper.swift */; };
 		09D654F8273C55EA00D197C9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 09D654F7273C55EA00D197C9 /* GoogleService-Info.plist */; };
 		633C1D5BBCD4618ADC79A345 /* Pods_VentureBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 648061E1B1FE6B9553BBE5BD /* Pods_VentureBook.framework */; };
 		A73D4DA2272CF01A00452ABA /* NoteMO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73D4DA1272CF01900452ABA /* NoteMO.swift */; };
@@ -48,6 +49,7 @@
 
 /* Begin PBXFileReference section */
 		03621AF6954504F95ACE04FB /* Pods-VentureBookTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VentureBookTests.debug.xcconfig"; path = "Target Support Files/Pods-VentureBookTests/Pods-VentureBookTests.debug.xcconfig"; sourceTree = "<group>"; };
+		091CF771273C61740061DB02 /* FireDBHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireDBHelper.swift; sourceTree = "<group>"; };
 		09D654F7273C55EA00D197C9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1E1D01ED66E6F282D83199B7 /* Pods-VentureBook-VentureBookUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VentureBook-VentureBookUITests.debug.xcconfig"; path = "Target Support Files/Pods-VentureBook-VentureBookUITests/Pods-VentureBook-VentureBookUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		3116EE8FA06E6580CD8D8FD3 /* Pods_VentureBook_VentureBookUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VentureBook_VentureBookUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -119,7 +121,6 @@
 				03621AF6954504F95ACE04FB /* Pods-VentureBookTests.debug.xcconfig */,
 				DA2BC764F8B226305B08F790 /* Pods-VentureBookTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -129,6 +130,7 @@
 				A77033F6272DA1D4007ACD17 /* NoteCDBHelper.swift */,
 				A766E271272EFF0C00FEC6BC /* TripCDBHelper.swift */,
 				A7715958273B6E9200329FD3 /* LocationHelper.swift */,
+				091CF771273C61740061DB02 /* FireDBHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -470,6 +472,7 @@
 				A765C6E8272CC3F6007D8C27 /* ContentView.swift in Sources */,
 				A765C6E6272CC3F6007D8C27 /* VentureBookApp.swift in Sources */,
 				A766E272272EFF0C00FEC6BC /* TripCDBHelper.swift in Sources */,
+				091CF772273C61740061DB02 /* FireDBHelper.swift in Sources */,
 				A766E270272EFE6500FEC6BC /* TripMO.swift in Sources */,
 				A765C712272CD440007D8C27 /* CoreData.xcdatamodeld in Sources */,
 				A77033F9272DA2E2007ACD17 /* Persistence.swift in Sources */,

@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import Firebase
+import FirebaseFirestore
 
 @main
 struct VentureBookApp: App {
@@ -17,13 +19,19 @@ struct VentureBookApp: App {
     let noteCDBHelper = NoteCDBHelper(context: NotePersistenceController.shared.container.viewContext)
     let tripCDBHelper = TripCDBHelper(context: TripPersistenceController.shared.container.viewContext)
     
+    let fireDbHelper : FireDBHelper
     
+    init() {
+        FirebaseApp.configure()
+        fireDbHelper = FireDBHelper(database: Firestore.firestore())
+    }
     
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .environmentObject(noteCDBHelper).environmentObject(tripCDBHelper)
                 .environmentObject(locationHelper)
+                .environmentObject(fireDbHelper)
         }
     }
 }

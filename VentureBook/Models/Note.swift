@@ -6,8 +6,9 @@
 //
 
 import Foundation
+import FirebaseFirestoreSwift
 
-struct Note : Identifiable, Hashable {
+struct Note : Codable, Identifiable, Hashable {
     var id = UUID()
     var title: String
     var desc: String
@@ -54,5 +55,36 @@ struct Note : Identifiable, Hashable {
         self.trip = "N/A" //not stored in database as it is irrelevent
     }
     
+    // parse JSON into swift obj
+    init?(dictionary: [String: Any]) {
+        guard let title = dictionary["title"] as? String else {
+            return nil
+        }
+        guard let desc = dictionary["desc"] as? String else {
+            return nil
+        }
+        guard let location = dictionary["location"] as? String else {
+            return nil
+        }
+        guard let posted = dictionary["posted"] as? Date else {
+            return nil
+        }
+        guard let picture = dictionary["picture"] as? Data else {
+            return nil
+        }
+        
+        self.init(title: title, desc: desc, location: location, posted: posted, picture: picture)
+    }
+    
+    // test initializer for firebase integration (to be deleted)
+    init(title: String, desc: String){
+        self.title = title
+        self.desc = desc
+        self.location = "here"
+        self.posted = Date.init()
+        self.picture = Data.init()
+        self.trip = "N/A"
+        self.uploaded = 2
+    }
 }
 
