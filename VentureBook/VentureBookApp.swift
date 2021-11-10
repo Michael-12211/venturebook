@@ -17,6 +17,8 @@ struct VentureBookApp: App {
     let noteCDBHelper = NoteCDBHelper(context: NotePersistenceController.shared.container.viewContext)
     let tripCDBHelper = TripCDBHelper(context: TripPersistenceController.shared.container.viewContext)
     
+    
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
