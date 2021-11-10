@@ -21,7 +21,7 @@ class NoteCDBHelper: ObservableObject{
             return shared!
         }else{
             //there is no existing instance of CoreDBHelper class, so create new and return
-            shared = NoteCDBHelper(context: PersistenceController.preview.container.viewContext)
+            shared = NoteCDBHelper(context: NotePersistenceController.preview.container.viewContext)
             return shared!
         }
     }

@@ -21,7 +21,7 @@ class TripCDBHelper: ObservableObject{
             return shared!
         }else{
             //there is no existing instance of CoreDBHelper class, so create new and return
-            shared = TripCDBHelper(context: PersistenceController.preview.container.viewContext)
+            shared = TripCDBHelper(context: TripPersistenceController.preview.container.viewContext)
             return shared!
         }
     }

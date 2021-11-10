@@ -22,6 +22,7 @@
 		A770000B27375A5E004EF3DD /* AddNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = A770000A27375A5E004EF3DD /* AddNote.swift */; };
 		A77033F7272DA1D4007ACD17 /* NoteCDBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77033F6272DA1D4007ACD17 /* NoteCDBHelper.swift */; };
 		A77033F9272DA2E2007ACD17 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77033F8272DA2E2007ACD17 /* Persistence.swift */; };
+		A7715959273B6E9200329FD3 /* LocationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7715958273B6E9200329FD3 /* LocationHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		A770000A27375A5E004EF3DD /* AddNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNote.swift; sourceTree = "<group>"; };
 		A77033F6272DA1D4007ACD17 /* NoteCDBHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCDBHelper.swift; sourceTree = "<group>"; };
 		A77033F8272DA2E2007ACD17 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		A7715958273B6E9200329FD3 /* LocationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 			children = (
 				A77033F6272DA1D4007ACD17 /* NoteCDBHelper.swift */,
 				A766E271272EFF0C00FEC6BC /* TripCDBHelper.swift */,
+				A7715958273B6E9200329FD3 /* LocationHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7715959273B6E9200329FD3 /* LocationHelper.swift in Sources */,
 				A765C6E8272CC3F6007D8C27 /* ContentView.swift in Sources */,
 				A765C6E6272CC3F6007D8C27 /* VentureBookApp.swift in Sources */,
 				A766E272272EFF0C00FEC6BC /* TripCDBHelper.swift in Sources */,

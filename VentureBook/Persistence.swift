@@ -8,11 +8,11 @@
 import Foundation
 import CoreData
 
-struct PersistenceController {
-    static let shared = PersistenceController()
+struct TripPersistenceController {
+    static let shared = TripPersistenceController()
     
-    static var preview: PersistenceController = {
-        let result = PersistenceController(inMemory: true)
+    static var preview: TripPersistenceController = {
+        let result = TripPersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
         return result
     }()
@@ -20,7 +20,33 @@ struct PersistenceController {
     let container: NSPersistentContainer
 
     init(inMemory: Bool = false) {
-        container = NSPersistentContainer(name: "CoreDataOrder")
+        container = NSPersistentContainer(name: "Trip")
+        if inMemory {
+            container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
+        }
+        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+            if let error = error as NSError? {
+                //TODO: handle error
+                fatalError("Unresolved error \(error), \(error.userInfo)")
+            }
+        })
+    }
+    
+}
+
+struct NotePersistenceController {
+    static let shared = NotePersistenceController()
+    
+    static var preview: NotePersistenceController = {
+        let result = NotePersistenceController(inMemory: true)
+        let viewContext = result.container.viewContext
+        return result
+    }()
+    
+    let container: NSPersistentContainer
+
+    init(inMemory: Bool = false) {
+        container = NSPersistentContainer(name: "Note")
         if inMemory {
             container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
         }

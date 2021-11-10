@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @EnvironmentObject var locationHelper : LocationHelper
+    
     var body: some View {
         NavigationView{
             VStack{
@@ -18,6 +21,9 @@ struct ContentView: View {
                 }
                 .navigationBarTitle("Home")
             }
+        }
+        .onAppear(){
+            self.locationHelper.checkPermission()
         }
     }
 }

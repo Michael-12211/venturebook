@@ -10,14 +10,18 @@ import SwiftUI
 @main
 struct VentureBookApp: App {
     
-    let persistenceController = PersistenceController.shared
-    let noteCDBHelper = NoteCDBHelper(context: PersistenceController.shared.container.viewContext)
-    let tripCDBHelper = TripCDBHelper(context: PersistenceController.shared.container.viewContext)
+    let locationHelper = LocationHelper()
+    
+    let notePersistenceController = NotePersistenceController.shared
+    let tripPersistenceController = TripPersistenceController.shared
+    let noteCDBHelper = NoteCDBHelper(context: NotePersistenceController.shared.container.viewContext)
+    let tripCDBHelper = TripCDBHelper(context: TripPersistenceController.shared.container.viewContext)
     
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .environmentObject(noteCDBHelper).environmentObject(tripCDBHelper)
+                .environmentObject(locationHelper)
         }
     }
 }
