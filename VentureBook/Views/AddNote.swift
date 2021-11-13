@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import PhotosUI
 
 struct AddNote: View {
     
@@ -21,6 +22,9 @@ struct AddNote: View {
     
     @State private var trips = [String]()
     
+    @State private var permissionGranted: Bool = false
+    @State private var image: UIImage?
+    
     var body: some View {
         VStack {
             HStack
@@ -28,6 +32,9 @@ struct AddNote: View {
                 Text("Title: ")
                 TextField("title", text: self.$title)
             }
+            Image(uiImage: image ?? UIImage(named: "placeholder")!)
+                .resizable()
+                .frame(width: 300, height: 300)
             HStack
             {
                 Text("Trip:")
@@ -69,6 +76,7 @@ struct AddNote: View {
             {
                 trips.append("none")
             }
+            self.checkPermissions()
         }
     }
     
@@ -81,6 +89,42 @@ struct AddNote: View {
         // Firebase integration testing
         let newNote = Note(title:title, desc:description)
         fireDBHelper.insertNote(newNote: newNote)
+    }
+    
+    private func checkPermissions(){
+        switch PHPhotoLibrary.authorizationStatus(){
+        case .authorized:
+            self.permissionGranted = true
+        case .notDetermined:
+            return
+        case .denied:
+            return
+        case .restricted:
+            return
+        case .limited:
+            break
+        @unknown default:
+            break
+        }
+    }
+    
+    private func requestPermissions(){
+        PHPhotoLibrary.requestAuthorization{status in
+            switch status{
+            case .authorized:
+                self.permissionGranted = true
+            case .denied:
+                return
+            case .limited:
+                return
+            case .notDetermined:
+                return
+            case .restricted:
+                return
+            @unknown default:
+                return
+            }
+        }
     }
 }
 
