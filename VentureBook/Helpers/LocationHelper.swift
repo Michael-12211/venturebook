@@ -33,6 +33,8 @@ class LocationHelper: NSObject, ObservableObject, CLLocationManagerDelegate{
         }else{
             self.requestPermission()
         }
+        
+        self.locationManager.distanceFilter = 3
     }
     
     func requestPermission() {

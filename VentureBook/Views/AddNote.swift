@@ -28,80 +28,93 @@ struct AddNote: View {
     @State private var showPicker: Bool = false
     @State private var isUsingCamera: Bool = false
     
+    @State private var loc: String = ""
+    
     var body: some View {
-        VStack {
-            HStack
-            {
-                Text("Title: ")
-                TextField("title", text: self.$title)
-            }
-            Image(uiImage: image ?? UIImage(named: "placeholder")!)
-                .resizable()
-                .frame(width: 300, height: 300)
-            Button(action:{
-                if (permissionGranted){
-                    self.showSheet = true
-                }else{
-                    self.requestPermissions()
-                }
-            }){
-                Text("Upload Photo")
-                    .padding()
-            }
-            .actionSheet(isPresented: $showSheet){
-                ActionSheet(title: Text("Select Photo"),
-                            message: Text("Choose the photo to upload"),
-                            buttons: [
-                                .default(Text("Choose from Photo Library")){
-                                    self.showPicker = true
-                                },
-                                .default(Text("Take a new pic from Camera")){
-                                    guard UIImagePickerController.isSourceTypeAvailable(.camera) else{
-                                        
-                                        print(#function, "Camera is not accessible")
-                                        return
-                                    }
-                                    self.isUsingCamera = true
-                                    self.showPicker = true
-                                },
-                                .cancel()
-                            ])
-            }
-            .fullScreenCover(isPresented: $showPicker){
-                if (isUsingCamera){
-                    CameraPicker(image: self.$image, isPresented: self.$isUsingCamera)
-                }else{
-                    LibraryPicker(selectedImage: self.$image, isPresented: self.$showPicker)
+        Form {
+            //VStack {
+            Section {
+                HStack
+                {
+                    Text("Title: ")
+                    TextField("title", text: self.$title)
                 }
             }
-            
-            HStack
-            {
-                Text("Trip:")
-                    .padding(.leading, 50.0)
-                Picker("Please choose trip", selection: $trip){
-                ForEach(trips, id: \.self) {
-                    Text($0)
+            Section {
+                Image(uiImage: image ?? UIImage(named: "placeholder")!)
+                    .resizable()
+                    .frame(width: 200, height: 100)
+                Button(action:{
+                    if (permissionGranted){
+                        self.showSheet = true
+                    }else{
+                        self.requestPermissions()
+                    }
+                }){
+                    Text("Upload Photo")
+                        .padding()
                 }
-                    
+                .actionSheet(isPresented: $showSheet){
+                    ActionSheet(title: Text("Select Photo"),
+                                message: Text("Choose the photo to upload"),
+                                buttons: [
+                                    .default(Text("Choose from Photo Library")){
+                                        self.showPicker = true
+                                    },
+                                    .default(Text("Take a new pic from Camera")){
+                                        guard UIImagePickerController.isSourceTypeAvailable(.camera) else{
+                                            
+                                            print(#function, "Camera is not accessible")
+                                            return
+                                        }
+                                        self.isUsingCamera = true
+                                        self.showPicker = true
+                                    },
+                                    .cancel()
+                                ])
+                }
+                .fullScreenCover(isPresented: $showPicker){
+                    if (isUsingCamera){
+                        CameraPicker(image: self.$image, isPresented: self.$isUsingCamera)
+                    }else{
+                        LibraryPicker(selectedImage: self.$image, isPresented: self.$showPicker)
+                    }
+                }
             }
-            .frame(height: 250.0)
-                .pickerStyle(WheelPickerStyle())                    }
-            .navigationBarTitle("Place Reservation", displayMode: .inline)
+                
+            Section {
+                HStack
+                {
+                    Text("Trip:")
+                        .padding(.leading, 50.0)
+                    Picker("Please choose trip", selection: $trip){
+                    ForEach(trips, id: \.self) {
+                        Text($0)
+                        }
+                    }
+                }
+                .navigationBarTitle("Place Reservation", displayMode: .inline)
+            }
+                
+            Section {
+                Text("Description:")
+                ZStack //allows enterring a multi-line description
+                {
+                    TextEditor(text: $description)
+                    Text(description).opacity(0).padding(.all, 8)
+                }
+            }
+                
+            Section {
+                Button(action:{
+                    addNote()
+                }){
+                    Text("Add note")
+                }
+            }
+            //} //VStack
             
-            Text("Description:")
-            ZStack //allows enterring a multi-line description
-            {
-                TextEditor(text: $description)
-                Text(description).opacity(0).padding(.all, 8)
-            }
-            
-            Button(action:{
-                addNote()
-            }){
-                Text("Add note")
-            }
-        }
+        } //Form
         .onAppear(){
             self.tripCDBHelper.getAllTrips()
             if (tripCDBHelper.mTrips.count > 0)
@@ -122,20 +135,10 @@ struct AddNote: View {
     
     private func addNote()
     {
-        //TODO
-        //once the picture can be added, save to coreDB
-        
-        var picture = UIImage(named: "placeholder")!.pngData();
-        
-        if (image != nil)
-        {
-            picture = image?.pngData()
-        }
-        
-        var loc = "Fail"
         
         if (self.locationHelper.currentLocation != nil)
         {
+            print ("current location found")
             
             let location = locationHelper.currentLocation!
             
@@ -146,6 +149,8 @@ struct AddNote: View {
                     loc = address!
                     
                     print(#function, "Address obtained : \(address!)")
+                    
+                    saveNote()
                 }else{
                     loc = "Fail"
                     print(#function, "error: ", error?.localizedDescription as Any)
@@ -153,6 +158,20 @@ struct AddNote: View {
             })
         }
             
+            // Firebase integration testing
+            //let newNote = Note(title:title, desc:description)
+            //fireDBHelper.insertNote(newNote: newNote)
+    }
+    
+    private func saveNote ()
+    {
+        var picture = UIImage(named: "placeholder")!.pngData();
+        
+        if (image != nil)
+        {
+            picture = image?.pngData()
+        }
+        
         if(loc != "Fail")
         {
             let note = Note(title: title, desc: description, trip: trip, picture: picture!, location: loc)
@@ -163,12 +182,9 @@ struct AddNote: View {
         }
         else //Since two of the group members developing this project cannot load their apps onto phones for testing of location, alternate implementations can be put here such that other functionalities can be tested. Code placed here must be deleted prior to the final app
         {
-            
+            print ("The location couldn't properly be handled \n")
         }
-            
-            // Firebase integration testing
-            //let newNote = Note(title:title, desc:description)
-            //fireDBHelper.insertNote(newNote: newNote)
+        
     }
     
     private func checkPermissions(){
