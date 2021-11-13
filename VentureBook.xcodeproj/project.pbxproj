@@ -26,6 +26,8 @@
 		A77033F7272DA1D4007ACD17 /* NoteCDBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77033F6272DA1D4007ACD17 /* NoteCDBHelper.swift */; };
 		A77033F9272DA2E2007ACD17 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77033F8272DA2E2007ACD17 /* Persistence.swift */; };
 		A7715959273B6E9200329FD3 /* LocationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7715958273B6E9200329FD3 /* LocationHelper.swift */; };
+		A7CE680A27405FD2008144FF /* CameraPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CE680927405FD2008144FF /* CameraPicker.swift */; };
+		A7CE680C27406021008144FF /* LibraryPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CE680B27406021008144FF /* LibraryPicker.swift */; };
 		C832244B6C4DA2147B5E0526 /* Pods_VentureBookTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 601758E085A96779032C72F6 /* Pods_VentureBookTests.framework */; };
 		F569036070335FCF9C11DEF4 /* Pods_VentureBook_VentureBookUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3116EE8FA06E6580CD8D8FD3 /* Pods_VentureBook_VentureBookUITests.framework */; };
 /* End PBXBuildFile section */
@@ -80,6 +82,8 @@
 		A77033F6272DA1D4007ACD17 /* NoteCDBHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCDBHelper.swift; sourceTree = "<group>"; };
 		A77033F8272DA2E2007ACD17 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		A7715958273B6E9200329FD3 /* LocationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationHelper.swift; sourceTree = "<group>"; };
+		A7CE680927405FD2008144FF /* CameraPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPicker.swift; sourceTree = "<group>"; };
+		A7CE680B27406021008144FF /* LibraryPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryPicker.swift; sourceTree = "<group>"; };
 		DA2BC764F8B226305B08F790 /* Pods-VentureBookTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VentureBookTests.release.xcconfig"; path = "Target Support Files/Pods-VentureBookTests/Pods-VentureBookTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -131,6 +135,8 @@
 				A766E271272EFF0C00FEC6BC /* TripCDBHelper.swift */,
 				A7715958273B6E9200329FD3 /* LocationHelper.swift */,
 				091CF771273C61740061DB02 /* FireDBHelper.swift */,
+				A7CE680927405FD2008144FF /* CameraPicker.swift */,
+				A7CE680B27406021008144FF /* LibraryPicker.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -478,6 +484,8 @@
 				A77033F9272DA2E2007ACD17 /* Persistence.swift in Sources */,
 				A766E26E272EFD8300FEC6BC /* Trip.swift in Sources */,
 				A765C719272CE950007D8C27 /* Note.swift in Sources */,
+				A7CE680A27405FD2008144FF /* CameraPicker.swift in Sources */,
+				A7CE680C27406021008144FF /* LibraryPicker.swift in Sources */,
 				A770000B27375A5E004EF3DD /* AddNote.swift in Sources */,
 				A73D4DA2272CF01A00452ABA /* NoteMO.swift in Sources */,
 				A77033F7272DA1D4007ACD17 /* NoteCDBHelper.swift in Sources */,
