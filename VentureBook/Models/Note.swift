@@ -19,12 +19,12 @@ struct Note : Codable, Identifiable, Hashable {
     var picture: Data
     
     //use this initializer when making a new note
-    init (title: String, desc: String, trip: String, picture: Data)
+    init (title: String, desc: String, trip: String, picture: Data, location: String)
     {
         self.title = title
         self.desc = desc
         self.trip = trip
-        self.location = "TODO"
+        self.location = location
         self.posted = Date()
         self.uploaded = 0;
         self.picture = picture

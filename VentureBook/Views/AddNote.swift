@@ -13,12 +13,12 @@ struct AddNote: View {
     @EnvironmentObject var noteCDBHelper : NoteCDBHelper
     @EnvironmentObject var tripCDBHelper : TripCDBHelper
     @EnvironmentObject var fireDBHelper : FireDBHelper
+    @EnvironmentObject var locationHelper : LocationHelper
     @Environment(\.presentationMode) var presentationMode
     
     @State private var title = ""
     @State private var description = ""
     @State private var trip = "none"
-    @State private var picture: Data? = nil
     
     @State private var trips = [String]()
     
@@ -124,11 +124,51 @@ struct AddNote: View {
     {
         //TODO
         //once the picture can be added, save to coreDB
-        self.presentationMode.wrappedValue.dismiss()
         
-        // Firebase integration testing
-        let newNote = Note(title:title, desc:description)
-        fireDBHelper.insertNote(newNote: newNote)
+        var picture = UIImage(named: "placeholder")!.pngData();
+        
+        if (image != nil)
+        {
+            picture = image?.pngData()
+        }
+        
+        var loc = "Fail"
+        
+        if (self.locationHelper.currentLocation != nil)
+        {
+            
+            let location = locationHelper.currentLocation!
+            
+            self.locationHelper.doReverseGeocoding(location: location, completionHandler: { (address, error) in
+                
+                if (error == nil && address != nil){
+                    //sucessfully obtained coordinates
+                    loc = address!
+                    
+                    print(#function, "Address obtained : \(address!)")
+                }else{
+                    loc = "Fail"
+                    print(#function, "error: ", error?.localizedDescription as Any)
+                }
+            })
+        }
+            
+        if(loc != "Fail")
+        {
+            let note = Note(title: title, desc: description, trip: trip, picture: picture!, location: loc)
+            
+            self.noteCDBHelper.insertNote(note: note)
+        
+            self.presentationMode.wrappedValue.dismiss()
+        }
+        else //Since two of the group members developing this project cannot load their apps onto phones for testing of location, alternate implementations can be put here such that other functionalities can be tested. Code placed here must be deleted prior to the final app
+        {
+            
+        }
+            
+            // Firebase integration testing
+            //let newNote = Note(title:title, desc:description)
+            //fireDBHelper.insertNote(newNote: newNote)
     }
     
     private func checkPermissions(){
