@@ -24,6 +24,9 @@ struct AddNote: View {
     
     @State private var permissionGranted: Bool = false
     @State private var image: UIImage?
+    @State private var showSheet: Bool = false
+    @State private var showPicker: Bool = false
+    @State private var isUsingCamera: Bool = false
     
     var body: some View {
         VStack {
@@ -35,6 +38,43 @@ struct AddNote: View {
             Image(uiImage: image ?? UIImage(named: "placeholder")!)
                 .resizable()
                 .frame(width: 300, height: 300)
+            Button(action:{
+                if (permissionGranted){
+                    self.showSheet = true
+                }else{
+                    self.requestPermissions()
+                }
+            }){
+                Text("Upload Photo")
+                    .padding()
+            }
+            .actionSheet(isPresented: $showSheet){
+                ActionSheet(title: Text("Select Photo"),
+                            message: Text("Choose the photo to upload"),
+                            buttons: [
+                                .default(Text("Choose from Photo Library")){
+                                    self.showPicker = true
+                                },
+                                .default(Text("Take a new pic from Camera")){
+                                    guard UIImagePickerController.isSourceTypeAvailable(.camera) else{
+                                        
+                                        print(#function, "Camera is not accessible")
+                                        return
+                                    }
+                                    self.isUsingCamera = true
+                                    self.showPicker = true
+                                },
+                                .cancel()
+                            ])
+            }
+            .fullScreenCover(isPresented: $showPicker){
+                if (isUsingCamera){
+                    CameraPicker(image: self.$image, isPresented: self.$isUsingCamera)
+                }else{
+                    LibraryPicker(selectedImage: self.$image, isPresented: self.$showPicker)
+                }
+            }
+            
             HStack
             {
                 Text("Trip:")
