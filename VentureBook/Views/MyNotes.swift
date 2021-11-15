@@ -13,10 +13,34 @@ struct MyNotes: View {
     @State private var selection : Int? = nil
     
     @Environment(\.presentationMode) var presentationMode
-    @EnvironmentObject var coreDBHelper : NoteCDBHelper
+    @EnvironmentObject var noteCDBHelper : NoteCDBHelper
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack(alignment: .bottom){
+            //NavigationLink(destination: EditStuff(selected: self.selectedIndex), tag: 1, selection: $selection){}
+        List {
+            ForEach (self.noteCDBHelper.mNotes.enumerated().map({$0}), id: \.element.self) { indx, note in
+                VStack(alignment: .leading){
+                    Text("\(note.title)")
+                }
+                .onTapGesture {
+                    self.selectedIndex = indx
+                    self.selection = 1
+                }
+            }
+            .onDelete(perform: { indexSet in
+                for index in indexSet{
+                    self.noteCDBHelper.deleteNote(noteID: self.noteCDBHelper.mNotes[index].id!)
+                    self.noteCDBHelper.mNotes.remove(at: index)
+                }
+            })//onDelete
+        }
+        .navigationBarTitle("List of stuff", displayMode: .inline)
+        }
+        .onAppear(){
+            self.noteCDBHelper.getAllNotes()
+        }
+        .onDisappear(){self.noteCDBHelper.getAllNotes()}
     }
 }
 
