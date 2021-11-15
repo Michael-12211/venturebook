@@ -15,11 +15,17 @@ struct ContentView: View {
         NavigationView{
             VStack{
                 Button (action:{
-                    print ("Navigating to the add Trip screen")
+                    print ("Navigating to the add Note screen")
                 }) {
                     NavigationLink("Make a note", destination: AddNote())
                 }
                 .navigationBarTitle("Home")
+                
+                Button (action:{
+                    print ("Navigating to the my notes screen")
+                }) {
+                    NavigationLink("View Notes", destination: MyNotes())
+                }
             }
         }
         .onAppear(){
