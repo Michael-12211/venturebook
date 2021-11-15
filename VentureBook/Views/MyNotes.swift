@@ -21,7 +21,13 @@ struct MyNotes: View {
         List {
             ForEach (self.noteCDBHelper.mNotes.enumerated().map({$0}), id: \.element.self) { indx, note in
                 VStack(alignment: .leading){
-                    Text("\(note.title)")
+                    HStack
+                    {
+                        Image(uiImage: UIImage(data: note.picture) ?? UIImage(named: "placeholder")!)
+                            .resizable()
+                            .frame(width: 100, height: 100, alignment: .leading)
+                        Text("\(note.title)")
+                    }
                 }
                 .onTapGesture {
                     self.selectedIndex = indx
