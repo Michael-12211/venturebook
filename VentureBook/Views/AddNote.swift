@@ -30,15 +30,24 @@ struct AddNote: View {
     
     @State private var loc: String = ""
     
+    init(){
+        UITableView.appearance().backgroundColor = .clear
+
+        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor:UIColor.init(Color.headerColor)]
+    }
+    
     var body: some View {
+        ZStack{
+            Color.backgroundColor.edgesIgnoringSafeArea(.all)
         Form {
+            
             //VStack {
             Section {
-                HStack
-                {
+                
+                HStack {
                     Text("Title: ")
                     TextField("title", text: self.$title)
-                }
+                }.foregroundColor(Color.headerColor)
             }
             Section {
                 Image(uiImage: image ?? UIImage(named: "placeholder")!)
@@ -53,7 +62,7 @@ struct AddNote: View {
                 }){
                     Text("Upload Photo")
                         .padding()
-                }
+                }.foregroundColor(Color.headerColor)
                 .actionSheet(isPresented: $showSheet){
                     ActionSheet(title: Text("Select Photo"),
                                 message: Text("Choose the photo to upload"),
@@ -86,18 +95,19 @@ struct AddNote: View {
                 HStack
                 {
                     Text("Trip:")
-                        .padding(.leading, 50.0)
+                        .padding(.leading, 0.0)
                     Picker("Please choose trip", selection: $trip){
                     ForEach(trips, id: \.self) {
                         Text($0)
                         }
                     }
-                }
+                }.foregroundColor(Color.headerColor)
                 .navigationBarTitle("Place Reservation", displayMode: .inline)
             }
                 
             Section {
                 Text("Description:")
+                    .foregroundColor(Color.headerColor)
                 ZStack //allows enterring a multi-line description
                 {
                     TextEditor(text: $description)
@@ -110,11 +120,11 @@ struct AddNote: View {
                     addNote()
                 }){
                     Text("Add note")
-                }
+                }.foregroundColor(Color.headerColor)
             }
             //} //VStack
             
-        } //Form
+        }.background(Color.backgroundColor) //Form
         .onAppear(){
             self.tripCDBHelper.getAllTrips()
             if (tripCDBHelper.mTrips.count > 0)
@@ -132,7 +142,7 @@ struct AddNote: View {
             self.checkPermissions()
         }
     }
-    
+    }
     private func addNote()
     {
         

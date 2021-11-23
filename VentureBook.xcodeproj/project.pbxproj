@@ -30,6 +30,9 @@
 		A7CE680A27405FD2008144FF /* CameraPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CE680927405FD2008144FF /* CameraPicker.swift */; };
 		A7CE680C27406021008144FF /* LibraryPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CE680B27406021008144FF /* LibraryPicker.swift */; };
 		C832244B6C4DA2147B5E0526 /* Pods_VentureBookTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 601758E085A96779032C72F6 /* Pods_VentureBookTests.framework */; };
+		D4D43066274C76EB00C55EF1 /* waves.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D4D43065274C76EB00C55EF1 /* waves.mp3 */; };
+		D4D43068274C77B800C55EF1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D43067274C77B800C55EF1 /* Extensions.swift */; };
+		D4D4306A274C8F7300C55EF1 /* MusicPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D43069274C8F7300C55EF1 /* MusicPlayer.swift */; };
 		F569036070335FCF9C11DEF4 /* Pods_VentureBook_VentureBookUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3116EE8FA06E6580CD8D8FD3 /* Pods_VentureBook_VentureBookUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -86,6 +89,9 @@
 		A7715958273B6E9200329FD3 /* LocationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationHelper.swift; sourceTree = "<group>"; };
 		A7CE680927405FD2008144FF /* CameraPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPicker.swift; sourceTree = "<group>"; };
 		A7CE680B27406021008144FF /* LibraryPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryPicker.swift; sourceTree = "<group>"; };
+		D4D43065274C76EB00C55EF1 /* waves.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = waves.mp3; sourceTree = "<group>"; };
+		D4D43067274C77B800C55EF1 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		D4D43069274C8F7300C55EF1 /* MusicPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayer.swift; sourceTree = "<group>"; };
 		DA2BC764F8B226305B08F790 /* Pods-VentureBookTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VentureBookTests.release.xcconfig"; path = "Target Support Files/Pods-VentureBookTests/Pods-VentureBookTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -146,6 +152,7 @@
 		A765C6D9272CC3F6007D8C27 = {
 			isa = PBXGroup;
 			children = (
+				D4D43065274C76EB00C55EF1 /* waves.mp3 */,
 				A765C6E4272CC3F6007D8C27 /* VentureBook */,
 				A765C6F6272CC3F7007D8C27 /* VentureBookTests */,
 				A765C701272CC3F7007D8C27 /* VentureBookUITests */,
@@ -225,6 +232,8 @@
 				A765C6E7272CC3F6007D8C27 /* ContentView.swift */,
 				A770000A27375A5E004EF3DD /* AddNote.swift */,
 				A767CFFB274309C2006DE73B /* MyNotes.swift */,
+				D4D43067274C77B800C55EF1 /* Extensions.swift */,
+				D4D43069274C8F7300C55EF1 /* MusicPlayer.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -348,6 +357,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A765C6ED272CC3F7007D8C27 /* Preview Assets.xcassets in Resources */,
+				D4D43066274C76EB00C55EF1 /* waves.mp3 in Resources */,
 				A765C6EA272CC3F7007D8C27 /* Assets.xcassets in Resources */,
 				095F09462740529B00F3FA92 /* GoogleService-Info.plist in Resources */,
 			);
@@ -479,6 +489,7 @@
 			files = (
 				A7715959273B6E9200329FD3 /* LocationHelper.swift in Sources */,
 				A765C6E8272CC3F6007D8C27 /* ContentView.swift in Sources */,
+				D4D4306A274C8F7300C55EF1 /* MusicPlayer.swift in Sources */,
 				A765C6E6272CC3F6007D8C27 /* VentureBookApp.swift in Sources */,
 				A766E272272EFF0C00FEC6BC /* TripCDBHelper.swift in Sources */,
 				091CF772273C61740061DB02 /* FireDBHelper.swift in Sources */,
@@ -491,6 +502,7 @@
 				A7CE680A27405FD2008144FF /* CameraPicker.swift in Sources */,
 				A7CE680C27406021008144FF /* LibraryPicker.swift in Sources */,
 				A770000B27375A5E004EF3DD /* AddNote.swift in Sources */,
+				D4D43068274C77B800C55EF1 /* Extensions.swift in Sources */,
 				A73D4DA2272CF01A00452ABA /* NoteMO.swift in Sources */,
 				A77033F7272DA1D4007ACD17 /* NoteCDBHelper.swift in Sources */,
 			);

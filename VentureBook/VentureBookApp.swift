@@ -24,6 +24,8 @@ struct VentureBookApp: App {
     init() {
         FirebaseApp.configure()
         fireDbHelper = FireDBHelper(database: Firestore.firestore())
+        MusicPlayer.shared.startBackgroundMusic(song: "waves")
+
     }
     
     var body: some Scene {
