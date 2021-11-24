@@ -15,8 +15,13 @@ struct MyNotes: View {
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var noteCDBHelper : NoteCDBHelper
     
+    init(){
+        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor:UIColor.init(Color.headerColor)]
+    }
+    
     var body: some View {
         ZStack(alignment: .bottom){
+            Color.backgroundColor.edgesIgnoringSafeArea(.all)
             //NavigationLink(destination: EditStuff(selected: self.selectedIndex), tag: 1, selection: $selection){}
         List {
             ForEach (self.noteCDBHelper.mNotes.enumerated().map({$0}), id: \.element.self) { indx, note in
