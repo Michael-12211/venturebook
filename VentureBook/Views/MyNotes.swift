@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MyNotes: View {
+    let trip : String
     
     @State private var selectedIndex : Int = -1
     @State private var selection : Int? = nil
@@ -15,28 +16,32 @@ struct MyNotes: View {
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var noteCDBHelper : NoteCDBHelper
     
-    init(){
+    init(trip: String){
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor:UIColor.init(Color.headerColor)]
+        self.trip = trip
     }
     
     var body: some View {
         ZStack(alignment: .bottom){
             Color.backgroundColor.edgesIgnoringSafeArea(.all)
-            //NavigationLink(destination: EditStuff(selected: self.selectedIndex), tag: 1, selection: $selection){}
+            //NavigationLink(destination: ViewStuff(selected: self.selectedIndex), tag: 1, selection: $selection){}
         List {
             ForEach (self.noteCDBHelper.mNotes.enumerated().map({$0}), id: \.element.self) { indx, note in
-                VStack(alignment: .leading){
-                    HStack
-                    {
-                        Image(uiImage: UIImage(data: note.picture) ?? UIImage(named: "placeholder")!)
-                            .resizable()
-                            .frame(width: 100, height: 100, alignment: .leading)
-                        Text("\(note.title)")
+                if (note.trip == trip || trip == "")
+                {
+                    VStack(alignment: .leading){
+                        HStack
+                        {
+                            Image(uiImage: UIImage(data: note.picture) ?? UIImage(named: "placeholder")!)
+                                .resizable()
+                                .frame(width: 100, height: 100, alignment: .leading)
+                            Text("\(note.title)")
+                        }
                     }
-                }
-                .onTapGesture {
-                    self.selectedIndex = indx
-                    self.selection = 1
+                    .onTapGesture {
+                        self.selectedIndex = indx
+                        self.selection = 1
+                    }
                 }
             }
             .onDelete(perform: { indexSet in
