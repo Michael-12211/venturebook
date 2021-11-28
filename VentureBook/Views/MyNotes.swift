@@ -13,6 +13,8 @@ struct MyNotes: View {
     @State private var selectedIndex : Int = -1
     @State private var selection : Int? = nil
     
+    @State private var selectedNote : Note? = nil
+    
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var noteCDBHelper : NoteCDBHelper
     
@@ -24,24 +26,23 @@ struct MyNotes: View {
     var body: some View {
         ZStack(alignment: .bottom){
             Color.backgroundColor.edgesIgnoringSafeArea(.all)
-            //NavigationLink(destination: ViewStuff(selected: self.selectedIndex), tag: 1, selection: $selection){}
+            //NavigationLink(destination: EditStuff(selected: self.selectedIndex), tag: 1, selection: $selection){}
+            NavigationLink(destination: NoteDetails(note: selectedNote), tag: 1, selection: $selection){}
         List {
             ForEach (self.noteCDBHelper.mNotes.enumerated().map({$0}), id: \.element.self) { indx, note in
-                if (note.trip == trip || trip == "")
-                {
-                    VStack(alignment: .leading){
-                        HStack
-                        {
-                            Image(uiImage: UIImage(data: note.picture) ?? UIImage(named: "placeholder")!)
-                                .resizable()
-                                .frame(width: 100, height: 100, alignment: .leading)
-                            Text("\(note.title)")
-                        }
+                VStack(alignment: .leading){
+                    HStack
+                    {
+                        Image(uiImage: UIImage(data: note.picture) ?? UIImage(named: "placeholder")!)
+                            .resizable()
+                            .frame(width: 100, height: 100, alignment: .leading)
+                        Text("\(note.title)")
                     }
-                    .onTapGesture {
-                        self.selectedIndex = indx
-                        self.selection = 1
-                    }
+                }
+                .onTapGesture {
+                    self.selectedIndex = indx
+                    self.selection = 1
+                    self.selectedNote = self.noteCDBHelper.mNotes[selectedIndex == -1 ? 0 : selectedIndex].convertToNote()
                 }
             }
             .onDelete(perform: { indexSet in
