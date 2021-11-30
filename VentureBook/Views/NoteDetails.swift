@@ -9,7 +9,9 @@ import SwiftUI
 
 struct NoteDetails: View {
     var note: Note?
-    
+    @Environment(\.presentationMode) var presentationMode
+    @EnvironmentObject var fireDBHelper : FireDBHelper
+
     init(note: Note?){
         self.note = note
         UITableView.appearance().backgroundColor = .clear
@@ -37,6 +39,36 @@ struct NoteDetails: View {
                 
                 Text(note!.desc)
                 Text(note!.posted, style: .date)
+                HStack(alignment: .center){
+                    Button ("Share Note", action: {
+                        let noteToUpload = Note(
+                            id: self.note!.id,
+                            title: self.note!.title,
+                            desc: self.note!.desc,
+                            location: self.note!.location,
+                            posted: self.note!.posted,
+                            picture: self.note!.picture
+                        )
+                        
+                        fireDBHelper.insertNote(newNote: noteToUpload)
+                        
+                        self.presentationMode.wrappedValue.dismiss()
+
+                    })
+                    .padding()
+                    .foregroundColor(Color.white)
+                    .background(RoundedRectangle(cornerRadius: 8).fill(Color.buttonColor))
+                    
+                    Button (action:{
+                        print ("Navigating to the my notes screen")
+                    }) {
+                        NavigationLink("Edit Note", destination: MyNotes()) // Edit note
+                    }
+                    .padding()
+                    .foregroundColor(Color.white)
+                    .background(RoundedRectangle(cornerRadius: 8).fill(Color.buttonColor))
+                    .disabled(note!.uploaded == 2)
+                }
                 Spacer()
             }
             .frame(

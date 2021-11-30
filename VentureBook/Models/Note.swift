@@ -44,8 +44,9 @@ struct Note : Codable, Identifiable, Hashable {
     }
     
     //use this initializer when taking a note from the online database
-    init (title: String, desc: String, location: String, posted: Date, picture: Data)
+    init (id: UUID, title: String, desc: String, location: String, posted: Date, picture: Data)
     {
+        self.id = id
         self.title = title
         self.desc = desc
         self.location = location
@@ -57,6 +58,9 @@ struct Note : Codable, Identifiable, Hashable {
     
     // parse JSON into swift obj
     init?(dictionary: [String: Any]) {
+        guard let id = dictionary["id"] as? UUID else {
+            return nil
+        }
         guard let title = dictionary["title"] as? String else {
             return nil
         }
@@ -73,7 +77,7 @@ struct Note : Codable, Identifiable, Hashable {
             return nil
         }
         
-        self.init(title: title, desc: desc, location: location, posted: posted, picture: picture)
+        self.init(id: id, title: title, desc: desc, location: location, posted: posted, picture: picture)
     }
     
     // test initializer for firebase integration (to be deleted)

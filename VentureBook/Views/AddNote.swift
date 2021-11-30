@@ -167,10 +167,6 @@ struct AddNote: View {
                 }
             })
         }
-            
-            // Firebase integration testing
-            //let newNote = Note(title:title, desc:description)
-            //fireDBHelper.insertNote(newNote: newNote)
     }
     
     private func saveNote ()
