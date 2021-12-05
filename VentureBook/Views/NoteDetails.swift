@@ -11,6 +11,7 @@ struct NoteDetails: View {
     var note: Note?
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var fireDBHelper : FireDBHelper
+    @EnvironmentObject var noteCDBHelper : NoteCDBHelper
 
     init(note: Note?){
         self.note = note
@@ -42,30 +43,38 @@ struct NoteDetails: View {
                 
                 HStack(alignment: .center){
                     
-                    //TODO: only display this button if the note's "uploaded" value is 0
-                    Button ("Share Note", action: {
-                        
-                        //TODO: change the note's "uploaded" value to 1 to record that it was uploaded
-                        
-                        /*let noteToUpload = Note(
-                            id: self.note!.id,
-                            title: self.note!.title,
-                            desc: self.note!.desc,
-                            location: self.note!.location,
-                            posted: self.note!.posted,
-                            picture: self.note!.picture
-                        )*/
-                        
-                        print("Made note for uploading")
-                        
-                        fireDBHelper.insertNote(newNote: note!)
-                        
-                        self.presentationMode.wrappedValue.dismiss()
+                    if (note!.uploaded == 0)
+                    {
+                        Button ("Share Note", action: {
+                            
+                            for (idx, obj) in self.noteCDBHelper.mNotes.enumerated()
+                            {
+                                if (obj.id == note!.id)
+                                {
+                                    self.noteCDBHelper.mNotes[idx].uploaded = 1
+                                }
+                            }
+                            
+                            /*let noteToUpload = Note(
+                                id: self.note!.id,
+                                title: self.note!.title,
+                                desc: self.note!.desc,
+                                location: self.note!.location,
+                                posted: self.note!.posted,
+                                picture: self.note!.picture
+                            )*/
+                            
+                            print("Made note for uploading")
+                            
+                            fireDBHelper.insertNote(newNote: note!)
+                            
+                            self.presentationMode.wrappedValue.dismiss()
 
-                    })
-                    .padding()
-                    .foregroundColor(Color.white)
-                    .background(RoundedRectangle(cornerRadius: 8).fill(Color.buttonColor))
+                        })
+                        .padding()
+                        .foregroundColor(Color.white)
+                        .background(RoundedRectangle(cornerRadius: 8).fill(Color.buttonColor))
+                    }
                     
                     //TODO: Only display this button if the note's "uploaded" value is not 2
                     Button (action:{
