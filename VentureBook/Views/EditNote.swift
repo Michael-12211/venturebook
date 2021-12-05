@@ -169,6 +169,11 @@ struct EditNote: View {
         self.noteCDBHelper.mNotes[index].desc = self.description
         self.noteCDBHelper.mNotes[index].trip = self.trip
         
+        if (self.noteCDBHelper.mNotes[index].uploaded == 1)
+        {
+            
+        }
+        
         self.presentationMode.wrappedValue.dismiss()
         self.presentationMode.wrappedValue.dismiss()
     }
