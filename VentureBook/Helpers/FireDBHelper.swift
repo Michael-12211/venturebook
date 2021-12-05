@@ -35,4 +35,25 @@ class FireDBHelper: ObservableObject {
             print(err)
         }
     }
+    
+    func updateNote(noteTobeUpdated: Note){
+        self.store.collection(NOTES_COLLECTION_NAME).document("\(noteTobeUpdated.id)")
+            .updateData(["title" : noteTobeUpdated.title, "desc" : noteTobeUpdated.desc, "picture" : noteTobeUpdated.picture]){ error in
+                if let error = error{
+                    print(#function, "error while updating doc " , error)
+                }else{
+                    print(#function, "Document successfully updated")
+                }
+            }
+    }
+    
+    func deleteNote(noteToDelete : Note){
+        self.store.collection(NOTES_COLLECTION_NAME).document("\(noteToDelete.id)").delete{error in
+            if let error = error{
+                print(#function, "error while deleting doc " , error)
+            }else{
+                print(#function, "Document successfully deleted")
+            }
+        }
+    }
 }
