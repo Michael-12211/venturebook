@@ -76,16 +76,18 @@ struct NoteDetails: View {
                         .background(RoundedRectangle(cornerRadius: 8).fill(Color.buttonColor))
                     }
                     
-                    //TODO: Only display this button if the note's "uploaded" value is not 2
-                    Button (action:{
-                        print ("Navigating to the my notes screen")
-                    }) {
-                        NavigationLink("Edit Note", destination: EditNote(select: self.note!.id)) // Edit note
+                    if (note!.uploaded != 2)
+                    {
+                        Button (action:{
+                            print ("Navigating to the my notes screen")
+                        }) {
+                            NavigationLink("Edit Note", destination: EditNote(select: self.note!.id)) // Edit note
+                        }
+                        .padding()
+                        .foregroundColor(Color.white)
+                        .background(RoundedRectangle(cornerRadius: 8).fill(Color.buttonColor))
+                        .disabled(note!.uploaded == 2)
                     }
-                    .padding()
-                    .foregroundColor(Color.white)
-                    .background(RoundedRectangle(cornerRadius: 8).fill(Color.buttonColor))
-                    .disabled(note!.uploaded == 2)
                 }
                 
                 //TODO: If the note's "uploaded" value is 1, add a button that removes the note from the database
