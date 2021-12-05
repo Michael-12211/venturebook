@@ -50,6 +50,8 @@ struct MyNotes: View {
                     self.noteCDBHelper.deleteNote(noteID: self.noteCDBHelper.mNotes[index].id!)
                     self.noteCDBHelper.mNotes.remove(at: index)
                 }
+                
+                //TODO: if the note is uploaded on firebase, delete that as well
             })//onDelete
         }
         .navigationBarTitle("List of stuff", displayMode: .inline)

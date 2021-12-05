@@ -39,8 +39,14 @@ struct NoteDetails: View {
                 
                 Text(note!.desc)
                 Text(note!.posted, style: .date)
+                
                 HStack(alignment: .center){
+                    
+                    //TODO: only display this button if the note's "uploaded" value is 0
                     Button ("Share Note", action: {
+                        
+                        //TODO: change the note's "uploaded" value to 1 to record that it was uploaded
+                        
                         let noteToUpload = Note(
                             id: self.note!.id,
                             title: self.note!.title,
@@ -59,6 +65,7 @@ struct NoteDetails: View {
                     .foregroundColor(Color.white)
                     .background(RoundedRectangle(cornerRadius: 8).fill(Color.buttonColor))
                     
+                    //TODO: Only display this button if the note's "uploaded" value is not 2
                     Button (action:{
                         print ("Navigating to the my notes screen")
                     }) {
@@ -69,6 +76,9 @@ struct NoteDetails: View {
                     .background(RoundedRectangle(cornerRadius: 8).fill(Color.buttonColor))
                     .disabled(note!.uploaded == 2)
                 }
+                
+                //TODO: If the note's "uploaded" value is 1, add a button that removes the note from the database
+                
                 Spacer()
             }
             .frame(
