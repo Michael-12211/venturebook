@@ -62,7 +62,7 @@ struct NoteDetails: View {
                     Button (action:{
                         print ("Navigating to the my notes screen")
                     }) {
-                        NavigationLink("Edit Note", destination: MyNotes()) // Edit note
+                        NavigationLink("Edit Note", destination: EditNote(select: self.note!.id)) // Edit note
                     }
                     .padding()
                     .foregroundColor(Color.white)
