@@ -122,15 +122,29 @@ struct EditNote: View {
                 
             Section {
                 Button(action:{
-                    addNote()
+                    editNote()
                 }){
-                    Text("Add note")
+                    Text("Confirm")
                 }.foregroundColor(Color.headerColor)
             }
             //} //VStack
             
         }.background(Color.backgroundColor) //Form
         .onAppear(){
+            //finds the index by using the UUID
+            for (idx, obj) in self.noteCDBHelper.mNotes.enumerated()
+            {
+                if (obj.id == selected)
+                {
+                    self.index = idx
+                }
+            }
+            
+            self.image = UIImage (data: self.noteCDBHelper.mNotes[index].picture)
+            self.title = self.noteCDBHelper.mNotes[index].title
+            self.description = self.noteCDBHelper.mNotes[index].desc
+            self.trip = self.noteCDBHelper.mNotes[index].trip
+            
             self.tripCDBHelper.getAllTrips()
             if (tripCDBHelper.mTrips.count > 0)
             {
@@ -146,77 +160,19 @@ struct EditNote: View {
             }
             self.checkPermissions()
         }
-        .onAppear(){
-            
-            //finds the index by using the UUID
-            for (idx, obj) in self.noteCDBHelper.mNotes.enumerated()
-            {
-                if (obj.id == selected)
-                {
-                    self.index = idx
-                }
-            }
-            
-            self.image = UIImage (data: self.noteCDBHelper.mNotes[index].picture)
-            self.title = self.noteCDBHelper.mNotes[index].title
-            self.description = self.noteCDBHelper.mNotes[index].desc
-            self.trip = self.noteCDBHelper.mNotes[index].trip
-            
-            //self.number = "\(self.coreDBHelper.mStuffs[selected].number)";
-            //self.name = self.coreDBHelper.mStuffs[selected].name;
-        }
     }
     }
-    private func addNote()
+    private func editNote()
     {
+        self.noteCDBHelper.mNotes[index].picture = image!.pngData()!
+        self.noteCDBHelper.mNotes[index].title = self.title
+        self.noteCDBHelper.mNotes[index].desc = self.description
+        self.noteCDBHelper.mNotes[index].trip = self.trip
         
-        if (self.locationHelper.currentLocation != nil)
-        {
-            print ("current location found")
-            
-            let location = locationHelper.currentLocation!
-            
-            self.locationHelper.doReverseGeocoding(location: location, completionHandler: { (address, error) in
-                
-                if (error == nil && address != nil){
-                    //sucessfully obtained coordinates
-                    loc = address!
-                    
-                    print(#function, "Address obtained : \(address!)")
-                    
-                    saveNote()
-                }else{
-                    loc = "Fail"
-                    print(#function, "error: ", error?.localizedDescription as Any)
-                }
-            })
-        }
+        self.presentationMode.wrappedValue.dismiss()
+        self.presentationMode.wrappedValue.dismiss()
     }
-    
-    private func saveNote ()
-    {
-        var picture = UIImage(named: "placeholder")!.pngData();
         
-        if (image != nil)
-        {
-            picture = image?.pngData()
-        }
-        
-        if(loc != "Fail")
-        {
-            let note = Note(title: title, desc: description, trip: trip, picture: picture!, location: loc)
-            
-            self.noteCDBHelper.insertNote(note: note)
-        
-            self.presentationMode.wrappedValue.dismiss()
-        }
-        else //Since two of the group members developing this project cannot load their apps onto phones for testing of location, alternate implementations can be put here such that other functionalities can be tested. Code placed here must be deleted prior to the final app
-        {
-            print ("The location couldn't properly be handled \n")
-        }
-        
-    }
-    
     private func checkPermissions(){
         switch PHPhotoLibrary.authorizationStatus(){
         case .authorized:
