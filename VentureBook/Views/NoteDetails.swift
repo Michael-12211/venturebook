@@ -47,16 +47,18 @@ struct NoteDetails: View {
                         
                         //TODO: change the note's "uploaded" value to 1 to record that it was uploaded
                         
-                        let noteToUpload = Note(
+                        /*let noteToUpload = Note(
                             id: self.note!.id,
                             title: self.note!.title,
                             desc: self.note!.desc,
                             location: self.note!.location,
                             posted: self.note!.posted,
                             picture: self.note!.picture
-                        )
+                        )*/
                         
-                        fireDBHelper.insertNote(newNote: noteToUpload)
+                        print("Made note for uploading")
+                        
+                        fireDBHelper.insertNote(newNote: note!)
                         
                         self.presentationMode.wrappedValue.dismiss()
 

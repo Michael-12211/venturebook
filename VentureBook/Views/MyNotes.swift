@@ -54,7 +54,7 @@ struct MyNotes: View {
                 //TODO: if the note is uploaded on firebase, delete that as well
             })//onDelete
         }
-        .navigationBarTitle("List of stuff", displayMode: .inline)
+        .navigationBarTitle("My Posts", displayMode: .inline)
         }
         .onAppear(){
             self.noteCDBHelper.getAllNotes()

@@ -175,7 +175,7 @@ struct AddNote: View {
         
         if (image != nil)
         {
-            picture = image?.pngData()
+            picture = image!.pngData()
         }
         
         if(loc != "Fail")
