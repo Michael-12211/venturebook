@@ -29,7 +29,8 @@ class FireDBHelper: ObservableObject {
     
     func insertNote(newNote: Note) {
         do{
-            try self.store.collection(NOTES_COLLECTION_NAME).addDocument(from: newNote)
+            //try self.store.collection(NOTES_COLLECTION_NAME).addDocument(from: newNote)
+            try self.store.collection(NOTES_COLLECTION_NAME).document("\(newNote.id)").setData(from: newNote)
         }catch let err as NSError{
             print(err)
         }
