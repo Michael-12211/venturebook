@@ -17,6 +17,7 @@ struct MyNotes: View {
     
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var noteCDBHelper : NoteCDBHelper
+    @EnvironmentObject var fireDBHelper : FireDBHelper
     
     init(trip: String){
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor:UIColor.init(Color.headerColor)]
@@ -47,11 +48,15 @@ struct MyNotes: View {
             }
             .onDelete(perform: { indexSet in
                 for index in indexSet{
+                    
+                    if (self.noteCDBHelper.mNotes[index].uploaded == 1)
+                    {
+                        self.fireDBHelper.deleteNote(noteToDelete: noteCDBHelper.mNotes[index].convertToNote())
+                    }
+                    
                     self.noteCDBHelper.deleteNote(noteID: self.noteCDBHelper.mNotes[index].id!)
                     self.noteCDBHelper.mNotes.remove(at: index)
                 }
-                
-                //TODO: if the note is uploaded on firebase, delete that as well
             })//onDelete
         }
         .navigationBarTitle("My Posts", displayMode: .inline)

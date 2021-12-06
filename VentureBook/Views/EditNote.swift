@@ -169,10 +169,9 @@ struct EditNote: View {
         self.noteCDBHelper.mNotes[index].desc = self.description
         self.noteCDBHelper.mNotes[index].trip = self.trip
         
-        //TODO: if the note was uploaded, edit the copy on firebase as well
         if (self.noteCDBHelper.mNotes[index].uploaded == 1)
         {
-            
+            self.fireDBHelper.updateNote(noteTobeUpdated: self.noteCDBHelper.mNotes[index].convertToNote())
         }
         
         self.presentationMode.wrappedValue.dismiss()
