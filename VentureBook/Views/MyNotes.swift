@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MyNotes: View {
+    let trip : String
     
     @State private var selectedIndex : Int = -1
     @State private var selection : Int? = nil
@@ -16,9 +17,11 @@ struct MyNotes: View {
     
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var noteCDBHelper : NoteCDBHelper
+    @EnvironmentObject var fireDBHelper : FireDBHelper
     
-    init(){
+    init(trip: String){
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor:UIColor.init(Color.headerColor)]
+        self.trip = trip
     }
     
     var body: some View {
@@ -45,12 +48,18 @@ struct MyNotes: View {
             }
             .onDelete(perform: { indexSet in
                 for index in indexSet{
+                    
+                    if (self.noteCDBHelper.mNotes[index].uploaded == 1)
+                    {
+                        self.fireDBHelper.deleteNote(noteToDelete: noteCDBHelper.mNotes[index].convertToNote())
+                    }
+                    
                     self.noteCDBHelper.deleteNote(noteID: self.noteCDBHelper.mNotes[index].id!)
                     self.noteCDBHelper.mNotes.remove(at: index)
                 }
             })//onDelete
         }
-        .navigationBarTitle("List of stuff", displayMode: .inline)
+        .navigationBarTitle("My Posts", displayMode: .inline)
         }
         .onAppear(){
             self.noteCDBHelper.getAllNotes()

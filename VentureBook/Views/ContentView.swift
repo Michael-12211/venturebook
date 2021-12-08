@@ -31,7 +31,7 @@ struct ContentView: View {
                 Button (action:{
                     print ("Navigating to the my notes screen")
                 }) {
-                    NavigationLink("View Notes", destination: MyNotes())
+                    NavigationLink("View Notes", destination: MyNotes(trip : ""))
                 }.padding()
                         .foregroundColor(Color.white)
                         .background(RoundedRectangle(cornerRadius: 8).fill(Color.buttonColor))
