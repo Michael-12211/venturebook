@@ -35,6 +35,13 @@ struct ContentView: View {
                 }.padding()
                         .foregroundColor(Color.white)
                         .background(RoundedRectangle(cornerRadius: 8).fill(Color.buttonColor))
+                    Button (action:{
+                        print ("Navigating to the maps screen")
+                    }) {
+                        NavigationLink("View Map", destination: MapView())
+                    }.padding()
+                            .foregroundColor(Color.white)
+                            .background(RoundedRectangle(cornerRadius: 8).fill(Color.buttonColor))
             }
         }.background(Color(red: 1.0, green: 0.9254901960784314, blue: 0.8196078431372549))
                 

@@ -9,7 +9,7 @@ import Foundation
 import CoreData
 
 @objc(NoteMO)
-final class NoteMO: NSManagedObject{
+final class NoteMO: NSManagedObject, Identifiable{
     @NSManaged var id: UUID?
     @NSManaged var title: String
     @NSManaged var desc: String

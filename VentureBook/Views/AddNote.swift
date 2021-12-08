@@ -151,7 +151,7 @@ struct AddNote: View {
             print ("current location found")
             
             let location = locationHelper.currentLocation!
-            
+            	
             self.locationHelper.doReverseGeocoding(location: location, completionHandler: { (address, error) in
                 
                 if (error == nil && address != nil){
