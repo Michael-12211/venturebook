@@ -11,6 +11,14 @@
 		095F09462740529B00F3FA92 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 095F09452740529B00F3FA92 /* GoogleService-Info.plist */; };
 		0988582C2752FBEC00D01808 /* NoteDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0988582B2752FBEC00D01808 /* NoteDetails.swift */; };
 		633C1D5BBCD4618ADC79A345 /* Pods_VentureBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 648061E1B1FE6B9553BBE5BD /* Pods_VentureBook.framework */; };
+		A72A90A92767F60F00CB7F87 /* VentureBookAppClipApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72A90A82767F60F00CB7F87 /* VentureBookAppClipApp.swift */; };
+		A72A90AB2767F60F00CB7F87 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72A90AA2767F60F00CB7F87 /* ContentView.swift */; };
+		A72A90AD2767F61300CB7F87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A72A90AC2767F61300CB7F87 /* Assets.xcassets */; };
+		A72A90B02767F61300CB7F87 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A72A90AF2767F61300CB7F87 /* Preview Assets.xcassets */; };
+		A72A90BC2767F61300CB7F87 /* VentureBookAppClipTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72A90BB2767F61300CB7F87 /* VentureBookAppClipTests.swift */; };
+		A72A90C62767F61300CB7F87 /* VentureBookAppClipUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72A90C52767F61300CB7F87 /* VentureBookAppClipUITests.swift */; };
+		A72A90C82767F61300CB7F87 /* VentureBookAppClipUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72A90C72767F61300CB7F87 /* VentureBookAppClipUITestsLaunchTests.swift */; };
+		A72A90CB2767F61300CB7F87 /* VentureBookAppClip.app in Embed App Clips */ = {isa = PBXBuildFile; fileRef = A72A90A62767F60F00CB7F87 /* VentureBookAppClip.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A73D4DA2272CF01A00452ABA /* NoteMO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73D4DA1272CF01900452ABA /* NoteMO.swift */; };
 		A765C6E6272CC3F6007D8C27 /* VentureBookApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A765C6E5272CC3F6007D8C27 /* VentureBookApp.swift */; };
 		A765C6E8272CC3F6007D8C27 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A765C6E7272CC3F6007D8C27 /* ContentView.swift */; };
@@ -40,6 +48,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		A72A90B82767F61300CB7F87 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A765C6DA272CC3F6007D8C27 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A72A90A52767F60F00CB7F87;
+			remoteInfo = VentureBookAppClip;
+		};
+		A72A90C22767F61300CB7F87 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A765C6DA272CC3F6007D8C27 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A72A90A52767F60F00CB7F87;
+			remoteInfo = VentureBookAppClip;
+		};
+		A72A90C92767F61300CB7F87 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A765C6DA272CC3F6007D8C27 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A72A90A52767F60F00CB7F87;
+			remoteInfo = VentureBookAppClip;
+		};
 		A765C6F4272CC3F7007D8C27 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A765C6DA272CC3F6007D8C27 /* Project object */;
@@ -56,6 +85,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		A72A90CC2767F61300CB7F87 /* Embed App Clips */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/AppClips";
+			dstSubfolderSpec = 16;
+			files = (
+				A72A90CB2767F61300CB7F87 /* VentureBookAppClip.app in Embed App Clips */,
+			);
+			name = "Embed App Clips";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		03621AF6954504F95ACE04FB /* Pods-VentureBookTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VentureBookTests.debug.xcconfig"; path = "Target Support Files/Pods-VentureBookTests/Pods-VentureBookTests.debug.xcconfig"; sourceTree = "<group>"; };
 		091CF771273C61740061DB02 /* FireDBHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireDBHelper.swift; sourceTree = "<group>"; };
@@ -68,6 +111,18 @@
 		601758E085A96779032C72F6 /* Pods_VentureBookTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VentureBookTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		648061E1B1FE6B9553BBE5BD /* Pods_VentureBook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VentureBook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7299A19473DA5676D7473AF3 /* Pods-VentureBook-VentureBookUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VentureBook-VentureBookUITests.release.xcconfig"; path = "Target Support Files/Pods-VentureBook-VentureBookUITests/Pods-VentureBook-VentureBookUITests.release.xcconfig"; sourceTree = "<group>"; };
+		A72A90A62767F60F00CB7F87 /* VentureBookAppClip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VentureBookAppClip.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A72A90A82767F60F00CB7F87 /* VentureBookAppClipApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VentureBookAppClipApp.swift; sourceTree = "<group>"; };
+		A72A90AA2767F60F00CB7F87 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A72A90AC2767F61300CB7F87 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A72A90AF2767F61300CB7F87 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A72A90B12767F61300CB7F87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A72A90B22767F61300CB7F87 /* VentureBookAppClip.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = VentureBookAppClip.entitlements; sourceTree = "<group>"; };
+		A72A90B72767F61300CB7F87 /* VentureBookAppClipTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VentureBookAppClipTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A72A90BB2767F61300CB7F87 /* VentureBookAppClipTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VentureBookAppClipTests.swift; sourceTree = "<group>"; };
+		A72A90C12767F61300CB7F87 /* VentureBookAppClipUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VentureBookAppClipUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A72A90C52767F61300CB7F87 /* VentureBookAppClipUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VentureBookAppClipUITests.swift; sourceTree = "<group>"; };
+		A72A90C72767F61300CB7F87 /* VentureBookAppClipUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VentureBookAppClipUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		A73D4DA1272CF01900452ABA /* NoteMO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteMO.swift; sourceTree = "<group>"; };
 		A765C6E2272CC3F6007D8C27 /* VentureBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VentureBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A765C6E5272CC3F6007D8C27 /* VentureBookApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VentureBookApp.swift; sourceTree = "<group>"; };
@@ -93,8 +148,8 @@
 		A7715958273B6E9200329FD3 /* LocationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationHelper.swift; sourceTree = "<group>"; };
 		A7CE680927405FD2008144FF /* CameraPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPicker.swift; sourceTree = "<group>"; };
 		A7CE680B27406021008144FF /* LibraryPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryPicker.swift; sourceTree = "<group>"; };
-		D435F3E42759C3910092206C /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		A7F12AA8275D29D50034D5C2 /* EditNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNote.swift; sourceTree = "<group>"; };
+		D435F3E42759C3910092206C /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		D4D43065274C76EB00C55EF1 /* waves.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = waves.mp3; sourceTree = "<group>"; };
 		D4D43067274C77B800C55EF1 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		D4D43069274C8F7300C55EF1 /* MusicPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayer.swift; sourceTree = "<group>"; };
@@ -102,6 +157,27 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		A72A90A32767F60F00CB7F87 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A72A90B42767F61300CB7F87 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A72A90BE2767F61300CB7F87 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A765C6DF272CC3F6007D8C27 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -142,6 +218,44 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		A72A90A72767F60F00CB7F87 /* VentureBookAppClip */ = {
+			isa = PBXGroup;
+			children = (
+				A72A90A82767F60F00CB7F87 /* VentureBookAppClipApp.swift */,
+				A72A90AA2767F60F00CB7F87 /* ContentView.swift */,
+				A72A90AC2767F61300CB7F87 /* Assets.xcassets */,
+				A72A90B12767F61300CB7F87 /* Info.plist */,
+				A72A90B22767F61300CB7F87 /* VentureBookAppClip.entitlements */,
+				A72A90AE2767F61300CB7F87 /* Preview Content */,
+			);
+			path = VentureBookAppClip;
+			sourceTree = "<group>";
+		};
+		A72A90AE2767F61300CB7F87 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				A72A90AF2767F61300CB7F87 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A72A90BA2767F61300CB7F87 /* VentureBookAppClipTests */ = {
+			isa = PBXGroup;
+			children = (
+				A72A90BB2767F61300CB7F87 /* VentureBookAppClipTests.swift */,
+			);
+			path = VentureBookAppClipTests;
+			sourceTree = "<group>";
+		};
+		A72A90C42767F61300CB7F87 /* VentureBookAppClipUITests */ = {
+			isa = PBXGroup;
+			children = (
+				A72A90C52767F61300CB7F87 /* VentureBookAppClipUITests.swift */,
+				A72A90C72767F61300CB7F87 /* VentureBookAppClipUITestsLaunchTests.swift */,
+			);
+			path = VentureBookAppClipUITests;
+			sourceTree = "<group>";
+		};
 		A73D4D9E272CEF3000452ABA /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -160,8 +274,11 @@
 			children = (
 				D4D43065274C76EB00C55EF1 /* waves.mp3 */,
 				A765C6E4272CC3F6007D8C27 /* VentureBook */,
+				A72A90A72767F60F00CB7F87 /* VentureBookAppClip */,
 				A765C6F6272CC3F7007D8C27 /* VentureBookTests */,
 				A765C701272CC3F7007D8C27 /* VentureBookUITests */,
+				A72A90BA2767F61300CB7F87 /* VentureBookAppClipTests */,
+				A72A90C42767F61300CB7F87 /* VentureBookAppClipUITests */,
 				A765C6E3272CC3F6007D8C27 /* Products */,
 				60C91E876CAC0A980AC4CA40 /* Pods */,
 				B5005035EDF87054999C7C92 /* Frameworks */,
@@ -174,6 +291,9 @@
 				A765C6E2272CC3F6007D8C27 /* VentureBook.app */,
 				A765C6F3272CC3F7007D8C27 /* VentureBookTests.xctest */,
 				A765C6FE272CC3F7007D8C27 /* VentureBookUITests.xctest */,
+				A72A90A62767F60F00CB7F87 /* VentureBookAppClip.app */,
+				A72A90B72767F61300CB7F87 /* VentureBookAppClipTests.xctest */,
+				A72A90C12767F61300CB7F87 /* VentureBookAppClipUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -260,6 +380,59 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		A72A90A52767F60F00CB7F87 /* VentureBookAppClip */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A72A90D32767F61300CB7F87 /* Build configuration list for PBXNativeTarget "VentureBookAppClip" */;
+			buildPhases = (
+				A72A90A22767F60F00CB7F87 /* Sources */,
+				A72A90A32767F60F00CB7F87 /* Frameworks */,
+				A72A90A42767F60F00CB7F87 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VentureBookAppClip;
+			productName = VentureBookAppClip;
+			productReference = A72A90A62767F60F00CB7F87 /* VentureBookAppClip.app */;
+			productType = "com.apple.product-type.application.on-demand-install-capable";
+		};
+		A72A90B62767F61300CB7F87 /* VentureBookAppClipTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A72A90D42767F61300CB7F87 /* Build configuration list for PBXNativeTarget "VentureBookAppClipTests" */;
+			buildPhases = (
+				A72A90B32767F61300CB7F87 /* Sources */,
+				A72A90B42767F61300CB7F87 /* Frameworks */,
+				A72A90B52767F61300CB7F87 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A72A90B92767F61300CB7F87 /* PBXTargetDependency */,
+			);
+			name = VentureBookAppClipTests;
+			productName = VentureBookAppClipTests;
+			productReference = A72A90B72767F61300CB7F87 /* VentureBookAppClipTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A72A90C02767F61300CB7F87 /* VentureBookAppClipUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A72A90D52767F61300CB7F87 /* Build configuration list for PBXNativeTarget "VentureBookAppClipUITests" */;
+			buildPhases = (
+				A72A90BD2767F61300CB7F87 /* Sources */,
+				A72A90BE2767F61300CB7F87 /* Frameworks */,
+				A72A90BF2767F61300CB7F87 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A72A90C32767F61300CB7F87 /* PBXTargetDependency */,
+			);
+			name = VentureBookAppClipUITests;
+			productName = VentureBookAppClipUITests;
+			productReference = A72A90C12767F61300CB7F87 /* VentureBookAppClipUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		A765C6E1272CC3F6007D8C27 /* VentureBook */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A765C707272CC3F7007D8C27 /* Build configuration list for PBXNativeTarget "VentureBook" */;
@@ -269,10 +442,12 @@
 				A765C6DF272CC3F6007D8C27 /* Frameworks */,
 				A765C6E0272CC3F6007D8C27 /* Resources */,
 				E3214E0BF3CE82312A46AF15 /* [CP] Embed Pods Frameworks */,
+				A72A90CC2767F61300CB7F87 /* Embed App Clips */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				A72A90CA2767F61300CB7F87 /* PBXTargetDependency */,
 			);
 			name = VentureBook;
 			productName = VentureBook;
@@ -324,9 +499,20 @@
 		A765C6DA272CC3F6007D8C27 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1250;
+				LastSwiftUpdateCheck = 1310;
 				LastUpgradeCheck = 1250;
 				TargetAttributes = {
+					A72A90A52767F60F00CB7F87 = {
+						CreatedOnToolsVersion = 13.1;
+					};
+					A72A90B62767F61300CB7F87 = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = A72A90A52767F60F00CB7F87;
+					};
+					A72A90C02767F61300CB7F87 = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = A72A90A52767F60F00CB7F87;
+					};
 					A765C6E1272CC3F6007D8C27 = {
 						CreatedOnToolsVersion = 12.5.1;
 					};
@@ -356,11 +542,37 @@
 				A765C6E1272CC3F6007D8C27 /* VentureBook */,
 				A765C6F2272CC3F7007D8C27 /* VentureBookTests */,
 				A765C6FD272CC3F7007D8C27 /* VentureBookUITests */,
+				A72A90A52767F60F00CB7F87 /* VentureBookAppClip */,
+				A72A90B62767F61300CB7F87 /* VentureBookAppClipTests */,
+				A72A90C02767F61300CB7F87 /* VentureBookAppClipUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		A72A90A42767F60F00CB7F87 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A72A90B02767F61300CB7F87 /* Preview Assets.xcassets in Resources */,
+				A72A90AD2767F61300CB7F87 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A72A90B52767F61300CB7F87 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A72A90BF2767F61300CB7F87 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A765C6E0272CC3F6007D8C27 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -492,6 +704,32 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		A72A90A22767F60F00CB7F87 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A72A90AB2767F60F00CB7F87 /* ContentView.swift in Sources */,
+				A72A90A92767F60F00CB7F87 /* VentureBookAppClipApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A72A90B32767F61300CB7F87 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A72A90BC2767F61300CB7F87 /* VentureBookAppClipTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A72A90BD2767F61300CB7F87 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A72A90C62767F61300CB7F87 /* VentureBookAppClipUITests.swift in Sources */,
+				A72A90C82767F61300CB7F87 /* VentureBookAppClipUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A765C6DE272CC3F6007D8C27 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -539,6 +777,21 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		A72A90B92767F61300CB7F87 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A72A90A52767F60F00CB7F87 /* VentureBookAppClip */;
+			targetProxy = A72A90B82767F61300CB7F87 /* PBXContainerItemProxy */;
+		};
+		A72A90C32767F61300CB7F87 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A72A90A52767F60F00CB7F87 /* VentureBookAppClip */;
+			targetProxy = A72A90C22767F61300CB7F87 /* PBXContainerItemProxy */;
+		};
+		A72A90CA2767F61300CB7F87 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A72A90A52767F60F00CB7F87 /* VentureBookAppClip */;
+			targetProxy = A72A90C92767F61300CB7F87 /* PBXContainerItemProxy */;
+		};
 		A765C6F5272CC3F7007D8C27 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = A765C6E1272CC3F6007D8C27 /* VentureBook */;
@@ -552,6 +805,176 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		A72A90CD2767F61300CB7F87 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_ENTITLEMENTS = VentureBookAppClip/VentureBookAppClip.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"VentureBookAppClip/Preview Content\"";
+				DEVELOPMENT_TEAM = CV3L26C2N2;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = VentureBookAppClip/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = VentureBook;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = sheridan.VentureBook.Clip;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A72A90CE2767F61300CB7F87 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_ENTITLEMENTS = VentureBookAppClip/VentureBookAppClip.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"VentureBookAppClip/Preview Content\"";
+				DEVELOPMENT_TEAM = CV3L26C2N2;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = VentureBookAppClip/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = VentureBook;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = sheridan.VentureBook.Clip;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A72A90CF2767F61300CB7F87 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CV3L26C2N2;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = sheridan.VentureBook.VentureBookAppClipTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VentureBookAppClip.app/VentureBookAppClip";
+			};
+			name = Debug;
+		};
+		A72A90D02767F61300CB7F87 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CV3L26C2N2;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = sheridan.VentureBook.VentureBookAppClipTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VentureBookAppClip.app/VentureBookAppClip";
+			};
+			name = Release;
+		};
+		A72A90D12767F61300CB7F87 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CV3L26C2N2;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = sheridan.VentureBook.VentureBookAppClipUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = VentureBookAppClip;
+			};
+			name = Debug;
+		};
+		A72A90D22767F61300CB7F87 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CV3L26C2N2;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = sheridan.VentureBook.VentureBookAppClipUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = VentureBookAppClip;
+			};
+			name = Release;
+		};
 		A765C705272CC3F7007D8C27 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -672,6 +1095,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 33FFA7329D244AB9C16BD94C /* Pods-VentureBook.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -695,6 +1119,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3715282AEE7086A1104FD20A /* Pods-VentureBook.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -801,6 +1226,33 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		A72A90D32767F61300CB7F87 /* Build configuration list for PBXNativeTarget "VentureBookAppClip" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A72A90CD2767F61300CB7F87 /* Debug */,
+				A72A90CE2767F61300CB7F87 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A72A90D42767F61300CB7F87 /* Build configuration list for PBXNativeTarget "VentureBookAppClipTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A72A90CF2767F61300CB7F87 /* Debug */,
+				A72A90D02767F61300CB7F87 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A72A90D52767F61300CB7F87 /* Build configuration list for PBXNativeTarget "VentureBookAppClipUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A72A90D12767F61300CB7F87 /* Debug */,
+				A72A90D22767F61300CB7F87 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		A765C6DD272CC3F6007D8C27 /* Build configuration list for PBXProject "VentureBook" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
