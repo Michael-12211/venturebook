@@ -22,7 +22,7 @@ struct ContentView: View {
                     Button (action:{
                         print ("Navigating to the add Note screen")
                     }) {
-                        NavigationLink("Make a note", destination: AddNote())
+                        NavigationLink("New Post", destination: AddNote())
                     }
                     .navigationBarTitle("Home").navigationBarItems(trailing: Image(systemName: "house.fill").foregroundColor(Color(.black))
 )
@@ -32,28 +32,28 @@ struct ContentView: View {
                     Button (action:{
                         print ("Navigating to the my notes screen")
                     }) {
-                        NavigationLink("View Notes", destination: MyNotes(trip : ""))
+                        NavigationLink("My Notes", destination: MyNotes(trip : ""))
                     }.padding()
                         .foregroundColor(Color.white)
                         .background(RoundedRectangle(cornerRadius: 8).fill(Color.buttonColor))
                     Button (action:{
                         print ("Going to trip view")
                     }) {
-                        NavigationLink("View Trips", destination: TripView())
+                        NavigationLink("My Trips", destination: TripView())
                     }.padding()
                         .foregroundColor(Color.white)
                         .background(RoundedRectangle(cornerRadius: 8).fill(Color.buttonColor))
                     Button (action:{
                         print ("Navigating to the maps screen")
                     }) {
-                        NavigationLink("View Map", destination: MapView())
+                        NavigationLink("My Map", destination: MapView())
                     }.padding()
                         .foregroundColor(Color.white)
                         .background(RoundedRectangle(cornerRadius: 8).fill(Color.buttonColor))
                     Button (action:{
                         print ("Navigating to online map screen")
                     }) {
-                        NavigationLink("Firebase Map", destination: FirebaseMap())
+                        NavigationLink("Public Map", destination: FirebaseMap())
                     }.padding()
                         .foregroundColor(Color.white)
                         .background(RoundedRectangle(cornerRadius: 8).fill(Color.buttonColor))

@@ -33,6 +33,8 @@ struct AddNote: View {
     
     @State private var loc: String = ""
     
+    @State private var new = true
+    
     init(){
         UITableView.appearance().backgroundColor = .clear
 
@@ -94,17 +96,19 @@ struct AddNote: View {
                 
             Section {
                 
-                HStack
+                ZStack
                 {
-                    Text("Trip:").padding(.leading, 0.0)
+                    //Text("Trip:").padding(.leading, 0.0)
                     
-                    Picker("Please choose trip", selection: $trip){
+                    Picker("Trip:", selection: $trip){
                         ForEach(trips, id: \.self) {
                             Text($0)
                         }
-                    }
+                    }/*.simultaneousGesture(TapGesture().onEnded{
+                        locationHelper.stopUpdatingLocation()
+                    })*/
                 }.foregroundColor(Color.headerColor)
-                .navigationBarTitle("Place Reservation", displayMode: .inline).navigationBarItems(trailing: Image(systemName: "book.fill"))
+                .navigationBarTitle("Select a trip", displayMode: .inline).navigationBarItems(trailing: Image(systemName: "book.fill"))
             }
                 
             Section {
@@ -121,27 +125,37 @@ struct AddNote: View {
                 Button(action:{
                     addNote()
                 }){
-                    Text("Add note")
+                    Text("Make this post")
                 }.foregroundColor(Color.headerColor)
             }
             //} //VStack
             
         }.background(Color.backgroundColor) //Form
         .onAppear(){
-            self.tripCDBHelper.getAllTrips()
-            if (tripCDBHelper.mTrips.count > 0)
+            if (new)
             {
-                for nTrip in tripCDBHelper.mTrips
+                self.tripCDBHelper.getAllTrips()
+                trips.removeAll()
+                if (tripCDBHelper.mTrips.count > 0)
                 {
-                    trips.append(nTrip.title)
+                    for nTrip in tripCDBHelper.mTrips
+                    {
+                        trips.append(nTrip.title)
+                    }
+                    trip = tripCDBHelper.mTrips[0].title
                 }
-                trip = tripCDBHelper.mTrips[0].title
+                else {
+                    trips.append("none")
+                }
+                
+                self.checkPermissions()
+                
+                new = false;
             }
-            else {
-                trips.append("none")
-            }
-            
-            self.checkPermissions()
+            locationHelper.startUpdatingLocation()
+        }
+        .onDisappear() {
+            locationHelper.stopUpdatingLocation()
         }
     }
     }
