@@ -148,5 +148,13 @@ class LocationHelper: NSObject, ObservableObject, CLLocationManagerDelegate{
         
         mapView.addAnnotation(mapAnnotation)
     }
+    
+    func stopUpdatingLocation() {
+        self.locationManager.stopUpdatingLocation()
+    }
+    
+    func startUpdatingLocation() {
+        self.locationManager.startUpdatingLocation()
+    }
 }
 

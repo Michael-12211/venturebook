@@ -12,6 +12,7 @@ struct NoteDetails: View {
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var fireDBHelper : FireDBHelper
     @EnvironmentObject var noteCDBHelper : NoteCDBHelper
+    @EnvironmentObject var locationHelper : LocationHelper
 
     init(note: Note?){
         self.note = note
@@ -55,15 +56,6 @@ struct NoteDetails: View {
                                 }
                             }
                             
-                            /*let noteToUpload = Note(
-                                id: self.note!.id,
-                                title: self.note!.title,
-                                desc: self.note!.desc,
-                                location: self.note!.location,
-                                posted: self.note!.posted,
-                                picture: self.note!.picture
-                            )*/
-                            
                             print("Made note for uploading")
                             
                             fireDBHelper.insertNote(newNote: note!)
@@ -79,7 +71,7 @@ struct NoteDetails: View {
                     if (note!.uploaded != 2)
                     {
                         Button (action:{
-                            print ("Navigating to the my notes screen")
+                            print ("Navigating to the edit notes screen")
                         }) {
                             NavigationLink("Edit Note", destination: EditNote(select: self.note!.id)) // Edit note
                         }
@@ -102,6 +94,12 @@ struct NoteDetails: View {
                 alignment: .topLeading
             )
             .padding(30)
+        }
+        .onAppear(){
+            locationHelper.stopUpdatingLocation()
+        }
+        .onDisappear(){
+            locationHelper.startUpdatingLocation()
         }
         
     }
