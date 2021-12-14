@@ -19,11 +19,11 @@ struct AddNote: View {
     @State private var title = ""
     @State private var description = ""
     @State private var trip = "none"
-    @State private var newTripTitle: String = ""
+    //@State private var newTripTitle: String = ""
     
-    @State private var trips = [Trip]()
+    @State private var trips = [String]()
     
-    @State private var addTripSheet = false
+    //@State private var addTripSheet = false
     
     @State private var permissionGranted: Bool = false
     @State private var image: UIImage?
@@ -93,34 +93,14 @@ struct AddNote: View {
             }
                 
             Section {
-                Button("Trip:  Add Trip", action: {
-                    addTripSheet = true
-                })
-                .sheet(isPresented: $addTripSheet, content: {
-                    Form{
-                        Section{
-                            TextField("New Trip", text: $newTripTitle)
-                        }
-                        Button("Add", action: {
-                            let newTrip = Trip(title: newTripTitle)
-                            self.tripCDBHelper.insertTrip(trip: newTrip)
-                            addTripSheet = false
-                        })
-                    }
-                })
-                .foregroundColor(Color.headerColor)
                 
                 HStack
                 {
                     Text("Trip:").padding(.leading, 0.0)
                     
                     Picker("Please choose trip", selection: $trip){
-                        Section(header: Text("Please choose a trip")){
-                            ForEach(self.tripCDBHelper.mTrips.map{$0.convertToTrip()}, id: \.self) { x in
-                                Text(x.title).tag(x.title)
-                            }
-                        }.onAppear{
-                            self.tripCDBHelper.getAllTrips()
+                        ForEach(trips, id: \.self) {
+                            Text($0)
                         }
                     }
                 }.foregroundColor(Color.headerColor)
@@ -148,6 +128,19 @@ struct AddNote: View {
             
         }.background(Color.backgroundColor) //Form
         .onAppear(){
+            self.tripCDBHelper.getAllTrips()
+            if (tripCDBHelper.mTrips.count > 0)
+            {
+                for nTrip in tripCDBHelper.mTrips
+                {
+                    trips.append(nTrip.title)
+                }
+                trip = tripCDBHelper.mTrips[0].title
+            }
+            else {
+                trips.append("none")
+            }
+            
             self.checkPermissions()
         }
     }
