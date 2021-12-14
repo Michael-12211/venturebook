@@ -62,7 +62,12 @@ struct MyNotes: View {
         .navigationBarTitle("My Posts", displayMode: .inline).navigationBarItems(trailing: Image(systemName: "book.closed.fill"))
         }
         .onAppear(){
-            self.noteCDBHelper.getAllNotes()
+            if trip == "" {
+                self.noteCDBHelper.getAllNotes()
+            }else {
+                self.noteCDBHelper.getAllNotesByTrip(trip: trip)
+            }
+            
         }
         .onDisappear(){self.noteCDBHelper.getAllNotes()}
     }

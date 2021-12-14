@@ -37,6 +37,13 @@ struct ContentView: View {
                         .foregroundColor(Color.white)
                         .background(RoundedRectangle(cornerRadius: 8).fill(Color.buttonColor))
                     Button (action:{
+                        print ("Going to trip view")
+                    }) {
+                        NavigationLink("View Trips", destination: TripView())
+                    }.padding()
+                        .foregroundColor(Color.white)
+                        .background(RoundedRectangle(cornerRadius: 8).fill(Color.buttonColor))
+                    Button (action:{
                         print ("Navigating to the maps screen")
                     }) {
                         NavigationLink("View Map", destination: MapView())
