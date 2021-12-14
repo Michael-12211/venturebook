@@ -17,6 +17,6 @@ final class TripMO: NSManagedObject{
 
 extension TripMO{
     func convertToTrip() -> Trip{
-        Trip(id: id ?? UUID(), title: title, created: created)
+        return Trip(id: id ?? UUID(), title: title, created: created)
     }
 }

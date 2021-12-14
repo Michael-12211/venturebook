@@ -38,7 +38,7 @@ class TripCDBHelper: ObservableObject{
             
             let insertedTrip = NSEntityDescription.insertNewObject(forEntityName: ENTITY_NAME, into: self.moc) as! TripMO
              
-            insertedTrip.id = UUID()
+            insertedTrip.id = trip.id
             insertedTrip.title = trip.title
             insertedTrip.created = trip.created
             
