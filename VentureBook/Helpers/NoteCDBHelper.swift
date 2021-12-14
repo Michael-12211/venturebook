@@ -72,6 +72,21 @@ class NoteCDBHelper: ObservableObject{
         }
     }
     
+    func getAllNotesByTrip(trip: String){
+        let fetchRequest = NSFetchRequest<NoteMO>(entityName: ENTITY_NAME)
+        fetchRequest.sortDescriptors = [NSSortDescriptor.init(key: "posted", ascending: false)]
+        
+        do{
+            let result = try self.moc.fetch(fetchRequest).filter {$0.trip == trip}
+            print(#function, "\(result.count) fetched")
+            self.mNotes.removeAll()
+            self.mNotes.insert(contentsOf: result, at: 0)
+            
+        }catch let error as NSError{
+            print(#function, "Couldn't fetch data: \(error)")
+        }
+    }
+    
     private func searchNote(noteID : UUID) -> NoteMO?{
         
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: ENTITY_NAME)

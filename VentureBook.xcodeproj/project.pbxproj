@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09066A3B276845D200BC76ED /* TripView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09066A3A276845D200BC76ED /* TripView.swift */; };
 		091CF772273C61740061DB02 /* FireDBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091CF771273C61740061DB02 /* FireDBHelper.swift */; };
 		095F09462740529B00F3FA92 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 095F09452740529B00F3FA92 /* GoogleService-Info.plist */; };
 		0988582C2752FBEC00D01808 /* NoteDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0988582B2752FBEC00D01808 /* NoteDetails.swift */; };
@@ -102,6 +103,7 @@
 
 /* Begin PBXFileReference section */
 		03621AF6954504F95ACE04FB /* Pods-VentureBookTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VentureBookTests.debug.xcconfig"; path = "Target Support Files/Pods-VentureBookTests/Pods-VentureBookTests.debug.xcconfig"; sourceTree = "<group>"; };
+		09066A3A276845D200BC76ED /* TripView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripView.swift; sourceTree = "<group>"; };
 		091CF771273C61740061DB02 /* FireDBHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireDBHelper.swift; sourceTree = "<group>"; };
 		095F09452740529B00F3FA92 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0988582B2752FBEC00D01808 /* NoteDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDetails.swift; sourceTree = "<group>"; };
@@ -366,6 +368,7 @@
 				D435F3E42759C3910092206C /* MapView.swift */,
 				A7F12AA8275D29D50034D5C2 /* EditNote.swift */,
 				D4C210EC276813F000BBD806 /* FirebaseMap.swift */,
+				09066A3A276845D200BC76ED /* TripView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -756,6 +759,7 @@
 				A7CE680C27406021008144FF /* LibraryPicker.swift in Sources */,
 				A770000B27375A5E004EF3DD /* AddNote.swift in Sources */,
 				D4D43068274C77B800C55EF1 /* Extensions.swift in Sources */,
+				09066A3B276845D200BC76ED /* TripView.swift in Sources */,
 				0988582C2752FBEC00D01808 /* NoteDetails.swift in Sources */,
 				A73D4DA2272CF01A00452ABA /* NoteMO.swift in Sources */,
 				A77033F7272DA1D4007ACD17 /* NoteCDBHelper.swift in Sources */,
