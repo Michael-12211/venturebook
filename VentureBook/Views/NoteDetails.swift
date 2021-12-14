@@ -9,10 +9,15 @@ import SwiftUI
 
 struct NoteDetails: View {
     var note: Note?
+
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var fireDBHelper : FireDBHelper
     @EnvironmentObject var noteCDBHelper : NoteCDBHelper
     @EnvironmentObject var locationHelper : LocationHelper
+    
+    @State private var deleted = false;
+    @State private var added = false;
+    @State private var uploaded = 0;
 
     init(note: Note?){
         self.note = note
@@ -41,10 +46,13 @@ struct NoteDetails: View {
                 
                 Text(note!.desc)
                 Text(note!.posted, style: .date)
+                .alert(isPresented: $added, content: {
+                    Alert(title: Text("Post uploaded!"), message: Text("This post will be visible to other users"))
+                })
                 
                 HStack(alignment: .center){
                     
-                    if (note!.uploaded == 0)
+                    if (uploaded == 0)
                     {
                         Button ("Share Note", action: {
                             
@@ -60,7 +68,9 @@ struct NoteDetails: View {
                             
                             fireDBHelper.insertNote(newNote: note!)
                             
-                            self.presentationMode.wrappedValue.dismiss()
+                            uploaded = 1
+                            added = true
+                            //self.presentationMode.wrappedValue.dismiss()
 
                         })
                         .padding()
@@ -68,7 +78,32 @@ struct NoteDetails: View {
                         .background(RoundedRectangle(cornerRadius: 8).fill(Color.buttonColor))
                     }
                     
-                    if (note!.uploaded != 2)
+                    if (uploaded == 1)
+                    {
+                        Button ("Un-Share Note", action: {
+                            
+                            for (idx, obj) in self.noteCDBHelper.mNotes.enumerated()
+                            {
+                                if (obj.id == note!.id)
+                                {
+                                    self.noteCDBHelper.mNotes[idx].uploaded = 0
+                                }
+                            }
+                            
+                            fireDBHelper.deleteNote(noteToDelete: note!)
+                            
+                            print("removed note from firebase")
+                            
+                            uploaded = 0;
+                            self.deleted = true;
+
+                        })
+                        .padding()
+                        .foregroundColor(Color.white)
+                        .background(RoundedRectangle(cornerRadius: 8).fill(Color.buttonColor))
+                    }
+                    
+                    if (uploaded != 2)
                     {
                         Button (action:{
                             print ("Navigating to the edit notes screen")
@@ -81,8 +116,9 @@ struct NoteDetails: View {
                         .disabled(note!.uploaded == 2)
                     }
                 }
-                
-                //TODO: If the note's "uploaded" value is 1, add a button that removes the note from the database
+                .alert(isPresented: $deleted, content: {
+                    Alert(title: Text("Post removed!"), message: Text("This post will no longer be shared with other users"))
+                })
                 
                 Spacer()
             }
@@ -96,6 +132,8 @@ struct NoteDetails: View {
             .padding(30)
         }
         .onAppear(){
+            uploaded = note!.uploaded
+            
             locationHelper.stopUpdatingLocation()
         }
         .onDisappear(){
