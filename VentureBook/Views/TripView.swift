@@ -9,6 +9,7 @@ import SwiftUI
 
 struct TripView: View {
     @EnvironmentObject var tripCDBHelper : TripCDBHelper
+    @EnvironmentObject var locationHelper : LocationHelper
     @State private var selection : Int? = nil
     @State private var selectedTrip: String = ""
     
@@ -43,19 +44,37 @@ struct TripView: View {
                     addTripSheet = true
                 })
                 .sheet(isPresented: $addTripSheet, content: {
-                    Form{
-                        Section{
-                            TextField("New Trip", text: $newTripTitle)
+                    VStack
+                    {
+                        Form{
+                            //VStack(alignment: .center)
+                            //{
+                                Text("Name your new trip!")
+                            //}
+                            Section{
+                                TextField("New Trip", text: $newTripTitle)
+                            }
+                            HStack {
+                                Button("Add", action: {
+                                    let newTrip = Trip(title: newTripTitle)
+                                    self.tripCDBHelper.insertTrip(trip: newTrip)
+                                    tripCDBHelper.getAllTrips()
+                                    addTripSheet = false
+                                })
+                            }
                         }
-                        Button("Add", action: {
-                            let newTrip = Trip(title: newTripTitle)
-                            self.tripCDBHelper.insertTrip(trip: newTrip)
+                        Button("Back", action: {
                             addTripSheet = false
                         })
+                        Spacer()
                     }
+                    
                 })
                 .foregroundColor(Color.headerColor)
             } //VStack
+        }
+        .onAppear() {
+            locationHelper.stopUpdatingLocation()
         }
         //} //VStack
     }
