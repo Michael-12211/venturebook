@@ -40,10 +40,8 @@ struct AddNote: View {
         ZStack{
             Color.backgroundColor.edgesIgnoringSafeArea(.all)
         Form {
-            
             //VStack {
             Section {
-                
                 HStack {
                     Text("Title: ")
                     TextField("title", text: self.$title)
@@ -102,7 +100,7 @@ struct AddNote: View {
                         }
                     }
                 }.foregroundColor(Color.headerColor)
-                .navigationBarTitle("Place Reservation", displayMode: .inline)
+                .navigationBarTitle("Place Reservation", displayMode: .inline).navigationBarItems(trailing: Image(systemName: "book.fill"))
             }
                 
             Section {

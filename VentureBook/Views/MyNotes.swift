@@ -59,7 +59,7 @@ struct MyNotes: View {
                 }
             })//onDelete
         }
-        .navigationBarTitle("My Posts", displayMode: .inline)
+        .navigationBarTitle("My Posts", displayMode: .inline).navigationBarItems(trailing: Image(systemName: "book.closed.fill"))
         }
         .onAppear(){
             self.noteCDBHelper.getAllNotes()
