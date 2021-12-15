@@ -61,9 +61,8 @@ struct FirebaseMap: View {
                         let i = n!
                         noteList.append(i)
                     }
+                    loadNotes()
                 }
-                loadNotes()
-                
             }
     }
     
