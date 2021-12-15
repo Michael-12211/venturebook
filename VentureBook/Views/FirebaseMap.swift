@@ -17,9 +17,7 @@ struct FirebaseMap: View {
         static let zoom = 0.5
     }
     
-    @State private var pings = [MyPings(coordinate: CLLocationCoordinate2D(
-        latitude: MapDefaults.latitude, longitude: MapDefaults.longitude
-    ))]
+    @State private var pings : [MyPings] = [];
     
     var body: some View {
         ZStack{
