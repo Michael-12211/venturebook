@@ -42,6 +42,8 @@
 		A7CE680A27405FD2008144FF /* CameraPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CE680927405FD2008144FF /* CameraPicker.swift */; };
 		A7CE680C27406021008144FF /* LibraryPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CE680B27406021008144FF /* LibraryPicker.swift */; };
 		A7F12AA9275D29D50034D5C2 /* EditNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F12AA8275D29D50034D5C2 /* EditNote.swift */; };
+		A7F7C7E6276A9EF7002DA37A /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F7C7E5276A9EF7002DA37A /* Note.swift */; };
+		A7F7C7E7276AA05D002DA37A /* NoteDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0988582B2752FBEC00D01808 /* NoteDetails.swift */; };
 		C832244B6C4DA2147B5E0526 /* Pods_VentureBookTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 601758E085A96779032C72F6 /* Pods_VentureBookTests.framework */; };
 		D435F3E52759C3910092206C /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D435F3E42759C3910092206C /* MapView.swift */; };
 		D4C210ED276813F000BBD806 /* FirebaseMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C210EC276813F000BBD806 /* FirebaseMap.swift */; };
@@ -155,6 +157,7 @@
 		A7CE680927405FD2008144FF /* CameraPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPicker.swift; sourceTree = "<group>"; };
 		A7CE680B27406021008144FF /* LibraryPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryPicker.swift; sourceTree = "<group>"; };
 		A7F12AA8275D29D50034D5C2 /* EditNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNote.swift; sourceTree = "<group>"; };
+		A7F7C7E5276A9EF7002DA37A /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		D435F3E42759C3910092206C /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		D4C210EC276813F000BBD806 /* FirebaseMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseMap.swift; sourceTree = "<group>"; };
 		D4D43065274C76EB00C55EF1 /* waves.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = waves.mp3; sourceTree = "<group>"; };
@@ -234,6 +237,7 @@
 				A72A90B12767F61300CB7F87 /* Info.plist */,
 				A72A90B22767F61300CB7F87 /* VentureBookAppClip.entitlements */,
 				A72A90AE2767F61300CB7F87 /* Preview Content */,
+				A7F7C7E5276A9EF7002DA37A /* Note.swift */,
 			);
 			path = VentureBookAppClip;
 			sourceTree = "<group>";
@@ -718,9 +722,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7F7C7E7276AA05D002DA37A /* NoteDetails.swift in Sources */,
 				A72A90AB2767F60F00CB7F87 /* ContentView.swift in Sources */,
 				A70010DC2769918D00AD4F20 /* MyPings.swift in Sources */,
 				A72A90A92767F60F00CB7F87 /* VentureBookAppClipApp.swift in Sources */,
+				A7F7C7E6276A9EF7002DA37A /* Note.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1241,6 +1247,219 @@
 			};
 			name = Release;
 		};
+		A7F7C7DD276A993D002DA37A /* APPCLIP */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = APPCLIP;
+		};
+		A7F7C7DE276A993D002DA37A /* APPCLIP */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 33FFA7329D244AB9C16BD94C /* Pods-VentureBook.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"VentureBook/Preview Content\"";
+				DEVELOPMENT_TEAM = CV3L26C2N2;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = VentureBook/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = sheridan.VentureBook;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = APPCLIP;
+		};
+		A7F7C7DF276A993D002DA37A /* APPCLIP */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 03621AF6954504F95ACE04FB /* Pods-VentureBookTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = VentureBookTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = sheridan.VentureBookTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VentureBook.app/VentureBook";
+			};
+			name = APPCLIP;
+		};
+		A7F7C7E0276A993D002DA37A /* APPCLIP */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1E1D01ED66E6F282D83199B7 /* Pods-VentureBook-VentureBookUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = VentureBookUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = sheridan.VentureBookUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = VentureBook;
+			};
+			name = APPCLIP;
+		};
+		A7F7C7E1276A993D002DA37A /* APPCLIP */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_ENTITLEMENTS = VentureBookAppClip/VentureBookAppClip.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"VentureBookAppClip/Preview Content\"";
+				DEVELOPMENT_TEAM = CV3L26C2N2;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = VentureBookAppClip/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = VentureBook;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = sheridan.VentureBook.Clip;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG APPCLIP";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = APPCLIP;
+		};
+		A7F7C7E2276A993D002DA37A /* APPCLIP */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CV3L26C2N2;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = sheridan.VentureBook.VentureBookAppClipTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VentureBookAppClip.app/VentureBookAppClip";
+			};
+			name = APPCLIP;
+		};
+		A7F7C7E3276A993D002DA37A /* APPCLIP */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CV3L26C2N2;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = sheridan.VentureBook.VentureBookAppClipUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = VentureBookAppClip;
+			};
+			name = APPCLIP;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1248,6 +1467,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A72A90CD2767F61300CB7F87 /* Debug */,
+				A7F7C7E1276A993D002DA37A /* APPCLIP */,
 				A72A90CE2767F61300CB7F87 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -1257,6 +1477,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A72A90CF2767F61300CB7F87 /* Debug */,
+				A7F7C7E2276A993D002DA37A /* APPCLIP */,
 				A72A90D02767F61300CB7F87 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -1266,6 +1487,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A72A90D12767F61300CB7F87 /* Debug */,
+				A7F7C7E3276A993D002DA37A /* APPCLIP */,
 				A72A90D22767F61300CB7F87 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -1275,6 +1497,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A765C705272CC3F7007D8C27 /* Debug */,
+				A7F7C7DD276A993D002DA37A /* APPCLIP */,
 				A765C706272CC3F7007D8C27 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -1284,6 +1507,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A765C708272CC3F7007D8C27 /* Debug */,
+				A7F7C7DE276A993D002DA37A /* APPCLIP */,
 				A765C709272CC3F7007D8C27 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -1293,6 +1517,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A765C70B272CC3F7007D8C27 /* Debug */,
+				A7F7C7DF276A993D002DA37A /* APPCLIP */,
 				A765C70C272CC3F7007D8C27 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -1302,6 +1527,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A765C70E272CC3F7007D8C27 /* Debug */,
+				A7F7C7E0276A993D002DA37A /* APPCLIP */,
 				A765C70F272CC3F7007D8C27 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;

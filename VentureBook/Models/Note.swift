@@ -11,7 +11,13 @@
 //
 
 import Foundation
+//#if APPCLIP
 import FirebaseFirestoreSwift
+//#endif
+
+//I tried to re-use this file in the app clip
+//However, active compilations cannot prevent import actions
+//This meant that the code would fail as the app clip cannot access firebase, and the import cannot be removed
 
 struct Note : Codable, Identifiable, Hashable {
     var id = UUID()

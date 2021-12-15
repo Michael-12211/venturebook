@@ -24,30 +24,43 @@ struct ContentView: View {
         static let zoom = 0.5
     }
     
-    @State private var pings : [MyPings] = [MyPings(coordinate: CLLocationCoordinate2D(latitude: MapDefaults.latitude, longitude: MapDefaults.longitude), title: "Example!", holding: Note())];
+    @State private var selection : Int? = nil
+    
+    @State private var selectedNote : Note? = nil
+    
+    @State private var pings : [MyPings] = [MyPings(coordinate: CLLocationCoordinate2D(latitude: MapDefaults.latitude, longitude: MapDefaults.longitude), title: "Example!", holding:
+                                                        Note(title: "Example!", desc: "A taste of how the real app works", trip: "", picture: UIImage(named: "placeholder")!.pngData()!, location: "Sheridan College")
+                                                   )];
     
     var body: some View {
-        ZStack{
-            //Color.backgroundColor.edgesIgnoringSafeArea(.all)
-            Map(coordinateRegion: $region, showsUserLocation: true,  userTrackingMode: .constant(.follow),
-            annotationItems: pings){item in
-                //Custom map annotation
-                MapAnnotation(coordinate: item.coordinate)
-                {
-                    ZStack {
-                        Color.white.ignoresSafeArea()
-                        VStack {
-                            Image(uiImage: UIImage(named: "placeholder")!)
-                                .resizable()
-                                .frame(width: 60, height: 60, alignment: .leading)
-                            Text(item.title).fontWeight(.bold).font(.system(size: 10)).padding(3)
+        NavigationView{
+            ZStack{
+                NavigationLink(destination: NoteDetails(note: selectedNote), tag: 1, selection: $selection){} //Link to navigate to the details page
+                Map(coordinateRegion: $region, showsUserLocation: true,  userTrackingMode: .constant(.follow),
+                annotationItems: pings){item in
+                    //Custom map annotation
+                    MapAnnotation(coordinate: item.coordinate)
+                    {
+                        ZStack {
+                            Color.white.ignoresSafeArea()
+                            VStack {
+                                Image(uiImage: UIImage(data: item.holding.picture) ?? UIImage(named: "placeholder")!)
+                                    .resizable()
+                                    .frame(width: 60, height: 60, alignment: .leading)
+                                Text(item.title).fontWeight(.bold).font(.system(size: 10)).padding(3)
+                            }
+                        }
+                        .onTapGesture {
+                            print("Tapped")
+                            self.selection = 1
+                            self.selectedNote = item.holding
                         }
                     }
                 }
-            }
-            .frame(width: 400, height: 300)
-        }.navigationBarTitle("Map View", displayMode: .inline).navigationBarItems(trailing: Image(systemName: "map.fill"))
+                .frame(width: 400, height: 300)
+            }.navigationBarTitle("Map View", displayMode: .inline).navigationBarItems(trailing: Image(systemName: "map.fill"))
 
+        }
     }
 }
 
@@ -56,5 +69,3 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
-
-struct Note {}
