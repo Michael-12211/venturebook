@@ -112,7 +112,7 @@ struct EditNote: View {
                         }
                     }
                 }.foregroundColor(Color.headerColor)
-                .navigationBarTitle("Place Reservation", displayMode: .inline)
+                .navigationBarTitle("Edit Note", displayMode: .inline)
             }
                 
             Section {

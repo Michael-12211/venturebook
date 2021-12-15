@@ -113,7 +113,7 @@ struct AddNote: View {
                         locationHelper.stopUpdatingLocation()
                     })*/
                 }.foregroundColor(Color.headerColor)
-                .navigationBarTitle("Select a trip", displayMode: .inline).navigationBarItems(trailing: Image(systemName: "book.fill"))
+                .navigationBarTitle("Add a note", displayMode: .inline).navigationBarItems(trailing: Image(systemName: "book.fill"))
             }
                 
             Section {

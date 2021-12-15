@@ -147,6 +147,7 @@ struct NoteDetails: View {
         .onDisappear(){
             locationHelper.startUpdatingLocation()
         }
+        .navigationBarTitle("Note details", displayMode: .inline)
         
     }
 }

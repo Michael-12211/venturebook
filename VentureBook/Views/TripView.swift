@@ -81,6 +81,7 @@ struct TripView: View {
         .onAppear() {
             locationHelper.stopUpdatingLocation()
         }
+        .navigationBarTitle("My trips", displayMode: .inline)
         //} //VStack
     }
 }
