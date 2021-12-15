@@ -125,7 +125,7 @@ struct AddNote: View {
                 Button(action:{
                     addNote()
                 }){
-                    Text("Make this post")
+                    Text("Make this note")
                 }.foregroundColor(Color.headerColor)
             }
             //} //VStack

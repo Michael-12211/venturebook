@@ -78,7 +78,7 @@ struct FirebaseMap: View {
                     
                     if (error == nil && address != nil){
                         //sucessfully obtained coordinates
-                        print ("Succeeded for post: " + i.title)
+                        print ("Succeeded for note: " + i.title)
                         let loc = address!
                         pings.append(MyPings(coordinate: CLLocationCoordinate2D(
                             latitude: loc.coordinate.latitude, longitude: loc.coordinate.longitude

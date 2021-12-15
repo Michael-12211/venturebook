@@ -47,7 +47,7 @@ struct NoteDetails: View {
                 Text(note!.desc)
                 Text(note!.posted, style: .date)
                 .alert(isPresented: $added, content: {
-                    Alert(title: Text("Post uploaded!"), message: Text("This post will be visible to other users"))
+                    Alert(title: Text("Note uploaded!"), message: Text("This note will be visible to other users"))
                 })
                 
                 HStack(alignment: .center){
@@ -120,7 +120,7 @@ struct NoteDetails: View {
                     }
                 }
                 .alert(isPresented: $deleted, content: {
-                    Alert(title: Text("Post removed!"), message: Text("This post will no longer be shared with other users"))
+                    Alert(title: Text("Note removed!"), message: Text("This note will no longer be shared with other users"))
                 })
                 
                 Spacer()

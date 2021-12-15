@@ -22,7 +22,7 @@ struct ContentView: View {
                     Button (action:{
                         print ("Navigating to the add Note screen")
                     }) {
-                        NavigationLink("New Post", destination: AddNote())
+                        NavigationLink("New Note", destination: AddNote())
                     }
                     .navigationBarTitle("Home").navigationBarItems(trailing: Image(systemName: "house.fill").foregroundColor(Color(.black))
 )

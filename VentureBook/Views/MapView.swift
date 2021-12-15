@@ -63,19 +63,26 @@ struct MapView: View {
 
     }
     
+    //Michael Kempe speaking
+    //I discovered that there was an error with loading multiple notes
+    //the geocoder could only handle one action at a time, meaning it couldn't handle every note
+    //After a few attempts, this is the solution I found worked
+    //This will load only one note at a time
+    //The completion handler for the geocoding will increment the number loaded and then call the method again
+    //This takes time, but will load every note
     func loadNotes () {
         
-        var passed = 0;
+        var passed = 0; //starting at 0
         
         self.noteCDBHelper.mNotes.forEach{ i in
             
-            if (passed == loaded)
+            if (passed == loaded) //if this is the next note to load
             {
                 self.locationHelper.doGeocoding(address: i.location, completionHandler: { (address, error) in
                     
                     if (error == nil && address != nil){
                         //sucessfully obtained coordinates
-                        print ("Succeeded for post: " + i.title)
+                        print ("Succeeded for note: " + i.title)
                         let loc = address!
                         pings.append(MyPings(coordinate: CLLocationCoordinate2D(
                             latitude: loc.coordinate.latitude, longitude: loc.coordinate.longitude
@@ -88,9 +95,11 @@ struct MapView: View {
                         print(#function, "error: ", error?.localizedDescription as Any)
                     }
                     
-                    loaded += 1
-                    loadNotes()
+                    loaded += 1 //increment the number of loaded notes
+                    loadNotes() //load the next note
+                    
                 })
+                //I would include a break here for efficiency, but apparently you can't add breaks in forEach blocks
             }
             passed += 1
         }
