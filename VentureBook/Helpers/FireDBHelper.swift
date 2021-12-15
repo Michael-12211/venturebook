@@ -9,7 +9,7 @@ import Foundation
 import FirebaseFirestore
 
 class FireDBHelper: ObservableObject {
-    @Published var noteList = [Note]()
+    //@Published var noteList = [Note]()
     private let NOTES_COLLECTION_NAME: String = "Notes"
     private let store : Firestore
     

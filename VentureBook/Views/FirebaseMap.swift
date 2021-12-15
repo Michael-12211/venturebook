@@ -22,6 +22,9 @@ struct FirebaseMap: View {
     }
     
     @State private var pings : [MyPings] = [];
+    @State private var noteList : [Note] = []
+    
+    @State private var loaded = 0
     
     var body: some View {
         ZStack{
@@ -56,26 +59,45 @@ struct FirebaseMap: View {
                     notes.forEach{
                         n in
                         let i = n!
-                        self.locationHelper.doGeocoding(address: i.location, completionHandler: { (address, error) in
-                            
-                            if (error == nil && address != nil){
-                                //sucessfully obtained coordinates
-                                let loc = address!
-                                pings.append(MyPings(coordinate: CLLocationCoordinate2D(
-                                    latitude: loc.coordinate.latitude, longitude: loc.coordinate.longitude
-                                ), title: i.title, holding: i
-                                                    )
-                                )
-                                print(#function, "Address obtained : \(address!)")
-                                
-                            }else{
-                                print(#function, "error: ", error?.localizedDescription as Any)
-                            }
-                        })
+                        noteList.append(i)
                     }
                 }
+                loadNotes()
                 
             }
+    }
+    
+    func loadNotes () {
+        
+        var passed = 0;
+        
+        self.noteList.forEach{ i in
+            
+            if (passed == loaded)
+            {
+                self.locationHelper.doGeocoding(address: i.location, completionHandler: { (address, error) in
+                    
+                    if (error == nil && address != nil){
+                        //sucessfully obtained coordinates
+                        print ("Succeeded for post: " + i.title)
+                        let loc = address!
+                        pings.append(MyPings(coordinate: CLLocationCoordinate2D(
+                            latitude: loc.coordinate.latitude, longitude: loc.coordinate.longitude
+                        ), title: i.title, holding: i
+                                            )
+                        )
+                        print(#function, "Address obtained : \(address!)")
+                        
+                    }else{
+                        print(#function, "error: ", error?.localizedDescription as Any)
+                    }
+                    
+                    loaded += 1
+                    loadNotes()
+                })
+            }
+            passed += 1
+        }
     }
 }
 
