@@ -26,6 +26,22 @@ class FireDBHelper: ObservableObject {
     init(database: Firestore) {
         self.store = database
     }
+     
+    func getallNotes(sucess: @escaping ([Note?]) -> Void){
+        self.store.collection(NOTES_COLLECTION_NAME).getDocuments(){
+            (q,e) in
+            if let e = e{
+                print(e)
+            }
+            else {
+                let results = q!.documents.map{d -> Note? in
+                   return try? d.data( as: Note.self)
+                    
+                }
+                sucess(results)
+            }
+        }
+    }
     
     func insertNote(newNote: Note) {
         do{
