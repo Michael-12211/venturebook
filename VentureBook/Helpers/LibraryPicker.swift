@@ -2,6 +2,11 @@
 //  LibraryPicker.swift
 //  VentureBook
 //
+//  Group 4
+//  Michael Kempe, 991 566 501
+//  Kevin Tran, 991 566 232
+//  Anh Phan, 991 489 221
+//
 //  Created by Michael Kempe on 2021-11-13.
 //
 
