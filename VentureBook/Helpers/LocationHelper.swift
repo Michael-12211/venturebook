@@ -34,7 +34,7 @@ class LocationHelper: NSObject, ObservableObject, CLLocationManagerDelegate{
             self.requestPermission()
         }
         
-        self.locationManager.distanceFilter = 5
+        self.locationManager.distanceFilter = 10
     }
     
     func requestPermission() {
