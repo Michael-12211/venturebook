@@ -36,7 +36,12 @@ struct ContentView: View {
                 {
                     ZStack {
                         Color.white.ignoresSafeArea()
-                        Text(item.title).fontWeight(.bold).padding(3)
+                        VStack {
+                            Image(uiImage: UIImage(named: "placeholder")!)
+                                .resizable()
+                                .frame(width: 60, height: 60, alignment: .leading)
+                            Text(item.title).fontWeight(.bold).font(.system(size: 10)).padding(3)
+                        }
                     }
                 }
             }
