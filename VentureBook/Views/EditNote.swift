@@ -168,6 +168,7 @@ struct EditNote: View {
         self.noteCDBHelper.mNotes[index].title = self.title
         self.noteCDBHelper.mNotes[index].desc = self.description
         self.noteCDBHelper.mNotes[index].trip = self.trip
+        self.noteCDBHelper.updateNote(updatedNote: self.noteCDBHelper.mNotes[index])
         
         if (self.noteCDBHelper.mNotes[index].uploaded == 1)
         {

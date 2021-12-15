@@ -61,8 +61,10 @@ struct NoteDetails: View {
                                 if (obj.id == note!.id)
                                 {
                                     self.noteCDBHelper.mNotes[idx].uploaded = 1
+                                    self.noteCDBHelper.updateNote(updatedNote: self.noteCDBHelper.mNotes[idx])
                                 }
                             }
+                            //note!.uploaded = 1
                             
                             print("Made note for uploading")
                             
@@ -87,6 +89,7 @@ struct NoteDetails: View {
                                 if (obj.id == note!.id)
                                 {
                                     self.noteCDBHelper.mNotes[idx].uploaded = 0
+                                    self.noteCDBHelper.updateNote(updatedNote: self.noteCDBHelper.mNotes[idx])
                                 }
                             }
                             
