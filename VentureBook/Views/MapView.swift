@@ -81,11 +81,4 @@ struct MapView_Previews: PreviewProvider {
     }
 }
 
-struct MyPings: Identifiable{
-    var coordinate: CLLocationCoordinate2D
-    var title: String
-    var holding: Note
-    let id = UUID()
-}
-
 

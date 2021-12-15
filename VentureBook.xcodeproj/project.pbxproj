@@ -12,6 +12,8 @@
 		095F09462740529B00F3FA92 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 095F09452740529B00F3FA92 /* GoogleService-Info.plist */; };
 		0988582C2752FBEC00D01808 /* NoteDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0988582B2752FBEC00D01808 /* NoteDetails.swift */; };
 		633C1D5BBCD4618ADC79A345 /* Pods_VentureBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 648061E1B1FE6B9553BBE5BD /* Pods_VentureBook.framework */; };
+		A70010DB2769917B00AD4F20 /* MyPings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70010DA2769917B00AD4F20 /* MyPings.swift */; };
+		A70010DC2769918D00AD4F20 /* MyPings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70010DA2769917B00AD4F20 /* MyPings.swift */; };
 		A72A90A92767F60F00CB7F87 /* VentureBookAppClipApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72A90A82767F60F00CB7F87 /* VentureBookAppClipApp.swift */; };
 		A72A90AB2767F60F00CB7F87 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72A90AA2767F60F00CB7F87 /* ContentView.swift */; };
 		A72A90AD2767F61300CB7F87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A72A90AC2767F61300CB7F87 /* Assets.xcassets */; };
@@ -114,6 +116,7 @@
 		601758E085A96779032C72F6 /* Pods_VentureBookTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VentureBookTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		648061E1B1FE6B9553BBE5BD /* Pods_VentureBook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VentureBook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7299A19473DA5676D7473AF3 /* Pods-VentureBook-VentureBookUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VentureBook-VentureBookUITests.release.xcconfig"; path = "Target Support Files/Pods-VentureBook-VentureBookUITests/Pods-VentureBook-VentureBookUITests.release.xcconfig"; sourceTree = "<group>"; };
+		A70010DA2769917B00AD4F20 /* MyPings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPings.swift; sourceTree = "<group>"; };
 		A72A90A62767F60F00CB7F87 /* VentureBookAppClip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VentureBookAppClip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A72A90A82767F60F00CB7F87 /* VentureBookAppClipApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VentureBookAppClipApp.swift; sourceTree = "<group>"; };
 		A72A90AA2767F60F00CB7F87 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -352,6 +355,7 @@
 				A73D4DA1272CF01900452ABA /* NoteMO.swift */,
 				A766E26D272EFD8300FEC6BC /* Trip.swift */,
 				A766E26F272EFE6500FEC6BC /* TripMO.swift */,
+				A70010DA2769917B00AD4F20 /* MyPings.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -715,6 +719,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A72A90AB2767F60F00CB7F87 /* ContentView.swift in Sources */,
+				A70010DC2769918D00AD4F20 /* MyPings.swift in Sources */,
 				A72A90A92767F60F00CB7F87 /* VentureBookAppClipApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -747,6 +752,7 @@
 				A766E272272EFF0C00FEC6BC /* TripCDBHelper.swift in Sources */,
 				D435F3E52759C3910092206C /* MapView.swift in Sources */,
 				091CF772273C61740061DB02 /* FireDBHelper.swift in Sources */,
+				A70010DB2769917B00AD4F20 /* MyPings.swift in Sources */,
 				A766E270272EFE6500FEC6BC /* TripMO.swift in Sources */,
 				A765C712272CD440007D8C27 /* CoreData.xcdatamodeld in Sources */,
 				D4C210ED276813F000BBD806 /* FirebaseMap.swift in Sources */,
@@ -841,6 +847,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = sheridan.VentureBook.Clip;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG APPCLIP";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -875,6 +882,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = sheridan.VentureBook.Clip;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = APPCLIP;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1093,6 +1101,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "";
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
@@ -1142,6 +1151,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = sheridan.VentureBook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
